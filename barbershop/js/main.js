@@ -189,6 +189,41 @@ document.addEventListener('DOMContentLoaded', () => {
     window.open(`https://wa.me/244923929074?text=${encodeURIComponent(text)}`, '_blank');
   });
 
+  // ---------- Experience videos ----------
+  document.querySelectorAll('.experience-card').forEach((card) => {
+    const video = card.querySelector('.experience-card__video');
+    const playBtn = card.querySelector('.experience-card__play');
+    if (!video || !playBtn) return;
+
+    const toggle = () => {
+      if (video.paused) {
+        // Pause others
+        document.querySelectorAll('.experience-card__video').forEach((v) => {
+          if (v !== video) {
+            v.pause();
+            v.closest('.experience-card')?.classList.remove('is-playing');
+          }
+        });
+        video.play();
+        card.classList.add('is-playing');
+      } else {
+        video.pause();
+        card.classList.remove('is-playing');
+      }
+    };
+
+    playBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggle();
+    });
+
+    card.addEventListener('click', () => toggle());
+
+    video.addEventListener('ended', () => {
+      card.classList.remove('is-playing');
+    });
+  });
+
   // ---------- Header scroll effect ----------
   let lastScroll = 0;
   const header = document.getElementById('header');
