@@ -69,19 +69,19 @@ ul {
 }
 
 /* ========== BUTTONS ========== */
-/* Soft filled pill style (Kylie-inspired) */
+/* Soft filled rounded rectangle (Kylie-inspired) */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.95rem 2rem;
+  padding: 0.85rem 1.85rem;
   font-size: 0.8rem;
   font-weight: var(--font-medium);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   text-transform: none;
   border: none;
-  border-radius: 999px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background var(--transition), color var(--transition), box-shadow var(--transition), opacity var(--transition);
   background: transparent;
@@ -107,12 +107,12 @@ ul {
 }
 
 .btn--ghost:hover {
-  background: var(--cream);
+  background: #f5f5f5;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .btn--small {
-  padding: 0.6rem 1.35rem;
+  padding: 0.55rem 1.25rem;
   font-size: 0.75rem;
 }
 
@@ -522,20 +522,20 @@ ul {
 
 .btn--service {
   align-self: flex-start;
-  padding: 0.55rem 1.35rem;
+  padding: 0.55rem 1.25rem;
   font-size: 0.75rem;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   text-transform: none;
   color: var(--black);
   border: none;
-  border-radius: 999px;
+  border-radius: 10px;
   background: var(--white);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
   transition: background var(--transition), box-shadow var(--transition);
 }
 
 .btn--service:hover {
-  background: var(--cream);
+  background: #f5f5f5;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
   color: var(--black);
 }
@@ -546,18 +546,82 @@ ul {
   overflow: hidden;
 }
 
+.experience-wrap {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .experience-track {
   display: flex;
   gap: 1rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  padding: 0.5rem max(1.25rem, calc((100% - 1100px) / 2 + 1.25rem)) 1.75rem;
+  padding: 0.5rem 1.25rem 1.75rem;
   scrollbar-width: none;
+  scroll-behavior: smooth;
 }
 
 .experience-track::-webkit-scrollbar {
   display: none;
+}
+
+/* Side arrows (Kylie-style) */
+.experience-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-60%);
+  z-index: 5;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: var(--white);
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+  transition: background var(--transition), box-shadow var(--transition), opacity var(--transition);
+}
+
+.experience-nav:hover {
+  background: #f5f5f5;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+}
+
+.experience-nav:disabled {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+
+.experience-nav--prev {
+  left: 0.5rem;
+}
+
+.experience-nav--next {
+  right: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .experience-nav--prev {
+    left: 0.75rem;
+  }
+  .experience-nav--next {
+    right: 0.75rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  .experience-nav--prev {
+    left: -0.25rem;
+  }
+  .experience-nav--next {
+    right: -0.25rem;
+  }
 }
 
 .experience-card {
@@ -806,14 +870,14 @@ ul {
   background: var(--white);
   color: var(--black);
   border: none;
-  border-radius: 999px;
-  letter-spacing: 0.04em;
+  border-radius: 10px;
+  letter-spacing: 0.02em;
   text-transform: none;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
 .lubango-content .btn:hover {
-  background: var(--cream);
+  background: #f5f5f5;
   color: var(--black);
 }
 
