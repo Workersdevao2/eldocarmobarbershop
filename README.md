@@ -116,12 +116,31 @@ Also listed: 930 095 886 / 925 184 386 (barbershop secondary)
 
 > **Convention:** Every important update lists the exact files changed so you can download only those and push to GitHub.
 
-### 2026-09-29 — Soft pill buttons (Kylie-style)
+### 2026-09-29 — Experience carousel arrows
 
-Buttons: filled soft pills (border-radius 999px), no heavy borders, sentence-case. Primary = black fill; ghost / service / dark sections = white fill.
+Side prev/next arrows on “A Experiência Eldo Carmo” (Kylie-style), smooth scroll by card, disabled at ends.
+
+**Barbershop**
+- `barbershop/index.html`
+- `barbershop/css/style.css`
+- `barbershop/js/main.js`
+
+**Root**
+- `README.md`
+
+### 2026-09-29 — Soft rounded buttons + full-length experience videos
+
+Buttons: soft rounded rectangles (10px radius, not full pills) matching Kylie “shop now” style — filled, no border, sentence-case.
+
+Experience videos: longer full scenes (18–26s each), no loop — play through once to the end.
 
 **Barbershop**
 - `barbershop/css/style.css`
+- `barbershop/index.html` (removed loop on experience videos)
+- `barbershop/assets/videos/exp-ambiente.mp4`
+- `barbershop/assets/videos/exp-corte.mp4`
+- `barbershop/assets/videos/exp-detalhe.mp4`
+- `barbershop/assets/videos/exp-barba.mp4`
 
 **Root**
 - `README.md`
