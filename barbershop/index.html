@@ -24,7 +24,7 @@
           <li><a href="#produtos" class="nav__link">Produtos</a></li>
           <li><a href="#galeria" class="nav__link">Galeria</a></li>
           <li><a href="#lubango" class="nav__link">Lubango</a></li>
-          <li><a href="#contacto" class="nav__link">Contacto</a></li>
+          <li><a href="#agendar" class="nav__link">Agendar</a></li>
         </ul>
       </nav>
 
@@ -72,69 +72,75 @@
       </header>
 
       <div class="services-grid">
-        <article class="service-card">
+        <article class="service-card" data-service="Corte Clássico">
           <div class="service-card__image">
             <img src="assets/images/service-classico.webp" alt="Corte Clássico" loading="lazy">
           </div>
-          <div class="service-card__body">
+          <div class="service-card__overlay">
             <h3 class="service-card__title">Corte Clássico</h3>
             <p class="service-card__desc">Corte tradicional com acabamento preciso e atenção aos detalhes.</p>
             <p class="service-card__price">A partir de 2.500 Kz</p>
+            <a href="#agendar" class="btn btn--service agendar-btn">Agendar</a>
           </div>
         </article>
 
-        <article class="service-card">
+        <article class="service-card" data-service="Corte + Barba">
           <div class="service-card__image">
             <img src="assets/images/service-corte-barba.webp" alt="Corte + Barba" loading="lazy">
           </div>
-          <div class="service-card__body">
+          <div class="service-card__overlay">
             <h3 class="service-card__title">Corte + Barba</h3>
             <p class="service-card__desc">Combinação completa para um visual impecável e bem cuidado.</p>
             <p class="service-card__price">A partir de 4.000 Kz</p>
+            <a href="#agendar" class="btn btn--service agendar-btn">Agendar</a>
           </div>
         </article>
 
-        <article class="service-card">
+        <article class="service-card" data-service="Fade / Degradê">
           <div class="service-card__image">
             <img src="assets/images/service-fade.webp" alt="Fade / Degradê" loading="lazy">
           </div>
-          <div class="service-card__body">
+          <div class="service-card__overlay">
             <h3 class="service-card__title">Fade / Degradê</h3>
             <p class="service-card__desc">Transições suaves e modernas, do baixo ao médio e alto fade.</p>
             <p class="service-card__price">A partir de 3.000 Kz</p>
+            <a href="#agendar" class="btn btn--service agendar-btn">Agendar</a>
           </div>
         </article>
 
-        <article class="service-card">
+        <article class="service-card" data-service="Design & Desenhos">
           <div class="service-card__image">
             <img src="assets/images/service-design.webp" alt="Design & Desenhos" loading="lazy">
           </div>
-          <div class="service-card__body">
+          <div class="service-card__overlay">
             <h3 class="service-card__title">Design & Desenhos</h3>
             <p class="service-card__desc">Linhas, padrões e arte no cabelo com precisão artística.</p>
             <p class="service-card__price">A partir de 3.000 Kz</p>
+            <a href="#agendar" class="btn btn--service agendar-btn">Agendar</a>
           </div>
         </article>
 
-        <article class="service-card">
+        <article class="service-card" data-service="Tranças & Twists">
           <div class="service-card__image">
             <img src="assets/images/service-trancas.webp" alt="Tranças & Twists" loading="lazy">
           </div>
-          <div class="service-card__body">
+          <div class="service-card__overlay">
             <h3 class="service-card__title">Tranças & Twists</h3>
             <p class="service-card__desc">Estilos protegidos e elegantes para todas as idades.</p>
             <p class="service-card__price">Consultar</p>
+            <a href="#agendar" class="btn btn--service agendar-btn">Agendar</a>
           </div>
         </article>
 
-        <article class="service-card">
+        <article class="service-card" data-service="Barboterapia">
           <div class="service-card__image">
             <img src="assets/images/service-barba.webp" alt="Barboterapia" loading="lazy">
           </div>
-          <div class="service-card__body">
+          <div class="service-card__overlay">
             <h3 class="service-card__title">Barboterapia</h3>
             <p class="service-card__desc">Tratamento completo de barba com toalha quente e produtos premium.</p>
             <p class="service-card__price">A partir de 2.000 Kz</p>
+            <a href="#agendar" class="btn btn--service agendar-btn">Agendar</a>
           </div>
         </article>
       </div>
@@ -314,12 +320,12 @@
     </div>
   </section>
 
-  <!-- ========== CONTACT ========== -->
-  <section class="section" id="contacto">
+  <!-- ========== AGENDAR ========== -->
+  <section class="section" id="agendar">
     <div class="container">
       <header class="section__header">
-        <p class="section__eyebrow">Fale connosco</p>
-        <h2 class="section__title">Contacto</h2>
+        <p class="section__eyebrow">Reserve o seu lugar</p>
+        <h2 class="section__title">Agendar Sessão</h2>
         <div class="section__line"></div>
       </header>
 
@@ -346,16 +352,49 @@
           </div>
         </div>
 
-        <form class="contact-form" id="contact-form">
+        <form class="contact-form" id="booking-form">
           <div class="form-group">
-            <label for="name">Nome</label>
-            <input type="text" id="name" name="name" required placeholder="O seu nome">
+            <label for="bk-name">Nome *</label>
+            <input type="text" id="bk-name" name="name" required placeholder="O seu nome">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="bk-phone">Telefone <span class="optional">(opcional)</span></label>
+              <input type="tel" id="bk-phone" name="phone" placeholder="9XX XXX XXX">
+            </div>
+            <div class="form-group">
+              <label for="bk-people">Nº de pessoas <span class="optional">(opcional)</span></label>
+              <input type="number" id="bk-people" name="people" min="1" max="20" placeholder="1">
+            </div>
           </div>
           <div class="form-group">
-            <label for="message">Mensagem</label>
-            <textarea id="message" name="message" rows="4" required placeholder="Como podemos ajudar?"></textarea>
+            <label for="bk-service">Serviço desejado *</label>
+            <select id="bk-service" name="service" required>
+              <option value="" disabled selected>Seleccione um serviço</option>
+              <option value="Corte Clássico">Corte Clássico</option>
+              <option value="Corte + Barba">Corte + Barba</option>
+              <option value="Fade / Degradê">Fade / Degradê</option>
+              <option value="Design & Desenhos">Design & Desenhos</option>
+              <option value="Tranças & Twists">Tranças & Twists</option>
+              <option value="Barboterapia">Barboterapia</option>
+              <option value="Outro">Outro</option>
+            </select>
           </div>
-          <button type="submit" class="btn btn--primary">Enviar via WhatsApp</button>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="bk-date">Data *</label>
+              <input type="date" id="bk-date" name="date" required>
+            </div>
+            <div class="form-group">
+              <label for="bk-time">Hora *</label>
+              <input type="time" id="bk-time" name="time" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="bk-message">Mensagem <span class="optional">(opcional)</span></label>
+            <textarea id="bk-message" name="message" rows="3" placeholder="Alguma preferência ou nota?"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary">Agendar via WhatsApp</button>
         </form>
       </div>
     </div>
