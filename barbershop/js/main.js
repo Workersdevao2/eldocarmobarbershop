@@ -21,6 +21,60 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---------- State ----------
   let cart = JSON.parse(localStorage.getItem('eldocarmo_cart') || '[]');
 
+  // ---------- Hero: still 5s → video 1 full → video 2 full (loop) ----------
+  const heroStill = document.getElementById('hero-still');
+  const heroVideo1 = document.getElementById('hero-video-1');
+  const heroVideo2 = document.getElementById('hero-video-2');
+  const heroDots = document.querySelectorAll('.hero__dot');
+  let heroTimer = null;
+
+  const setHeroDot = (i) => {
+    heroDots.forEach((d, idx) => d.classList.toggle('is-active', idx === i));
+  };
+
+  const hideAllHeroMedia = () => {
+    heroStill?.classList.add('is-hidden');
+    [heroVideo1, heroVideo2].forEach((v) => {
+      if (!v) return;
+      v.classList.remove('is-visible');
+      v.pause();
+      v.currentTime = 0;
+    });
+  };
+
+  const showHeroSlide = (i) => {
+    clearTimeout(heroTimer);
+    hideAllHeroMedia();
+    setHeroDot(i);
+
+    if (i === 0) {
+      heroStill?.classList.remove('is-hidden');
+      heroTimer = setTimeout(() => showHeroSlide(1), 5000);
+    } else if (i === 1 && heroVideo1) {
+      heroVideo1.classList.add('is-visible');
+      heroVideo1.play().catch(() => {});
+    } else if (i === 2 && heroVideo2) {
+      heroVideo2.classList.add('is-visible');
+      heroVideo2.play().catch(() => {});
+    }
+  };
+
+  if (heroStill && heroVideo1 && heroVideo2) {
+    heroVideo1.addEventListener('ended', () => showHeroSlide(2));
+    heroVideo2.addEventListener('ended', () => showHeroSlide(0));
+
+    heroDots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const go = parseInt(dot.dataset.heroGo, 10);
+        if (!Number.isNaN(go)) showHeroSlide(go);
+      });
+    });
+
+    heroStill.classList.remove('is-hidden');
+    setHeroDot(0);
+    heroTimer = setTimeout(() => showHeroSlide(1), 5000);
+  }
+
   // ---------- Hamburger ----------
   hamburger?.addEventListener('click', () => {
     const isOpen = hamburger.classList.toggle('is-active');
