@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const cartCountEl = document.getElementById('cart-count');
   const cartTotalEl = document.getElementById('cart-total');
   const checkoutBtn = document.getElementById('checkout-btn');
-  const contactForm = document.getElementById('contact-form');
+  const bookingForm = document.getElementById('booking-form');
 
   // ---------- State ----------
   let cart = JSON.parse(localStorage.getItem('eldocarmo_cart') || '[]');
@@ -147,18 +147,46 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initial render
   renderCart();
 
-  // ---------- Contact Form → WhatsApp ----------
-  contactForm?.addEventListener('submit', (e) => {
+  // ---------- Service card → pre-fill booking ----------
+  document.querySelectorAll('.agendar-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.service-card');
+      const service = card?.dataset.service;
+      const select = document.getElementById('bk-service');
+      if (service && select) {
+        select.value = service;
+      }
+    });
+  });
+
+  // ---------- Booking Form → WhatsApp ----------
+  bookingForm?.addEventListener('submit', (e) => {
     e.preventDefault();
-    const name = document.getElementById('name').value.trim();
-    const message = document.getElementById('message').value.trim();
+    const name = document.getElementById('bk-name').value.trim();
+    const phone = document.getElementById('bk-phone').value.trim();
+    const people = document.getElementById('bk-people').value.trim();
+    const service = document.getElementById('bk-service').value;
+    const date = document.getElementById('bk-date').value;
+    const time = document.getElementById('bk-time').value;
+    const message = document.getElementById('bk-message').value.trim();
 
-    if (!name || !message) return;
+    if (!name || !service || !date || !time) return;
 
-    const text = encodeURIComponent(
-      `Olá! O meu nome é ${name}.\n\n${message}`
-    );
-    window.open(`https://wa.me/244923929074?text=${text}`, '_blank');
+    // Format date for display (YYYY-MM-DD → DD/MM/YYYY)
+    const [y, m, d] = date.split('-');
+    const dateFormatted = `${d}/${m}/${y}`;
+
+    let text = `Olá! Gostaria de agendar uma sessão na Eldo Carmo Barber Shop.\n\n`;
+    text += `Nome: ${name}\n`;
+    if (phone) text += `Telefone: ${phone}\n`;
+    if (people) text += `Nº de pessoas: ${people}\n`;
+    text += `Serviço: ${service}\n`;
+    text += `Data: ${dateFormatted}\n`;
+    text += `Hora: ${time}\n`;
+    if (message) text += `\nNota: ${message}\n`;
+    text += `\nObrigado!`;
+
+    window.open(`https://wa.me/244923929074?text=${encodeURIComponent(text)}`, '_blank');
   });
 
   // ---------- Header scroll effect ----------
