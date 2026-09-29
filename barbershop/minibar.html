@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Eldo Carmo Mini-Bar — Snacks, cocktails e bebidas. Chocolate Scookiie, refrigerantes e mais no V17, Luanda.">
+  <title>Eldo Carmo Mini-Bar | Snacks, Cocktails &amp; Bebidas</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/images/eldocarmologo.webp" type="image/webp">
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="assets/images/eldocarmologo.webp" alt="Eldo Carmo Barber Shop" width="48" height="48">
+        <span>Eldo Carmo</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Menu principal">
+        <ul class="nav__list">
+          <li><a href="index.html#servicos" class="nav__link">Serviços</a></li>
+          <li><a href="minibar.html" class="nav__link" aria-current="page">Mini-Bar</a></li>
+          <li><a href="index.html#galeria" class="nav__link">Galeria</a></li>
+          <li><a href="index.html#lubango" class="nav__link">Lubango</a></li>
+          <li><a href="index.html#agendar" class="nav__link">Agendar</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="cart-btn" id="cart-btn" aria-label="Carrinho">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+          <span class="cart-btn__count" id="cart-count">0</span>
+        </button>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section minibar-page">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">Eldo Carmo</p>
+          <h1 class="section__title">Mini-Bar</h1>
+          <div class="section__line"></div>
+          <p class="section__intro">Snacks, cocktails e bebidas. Chocolate Scookiie, refrigerantes e serviço de bar no espaço V17.</p>
+        </header>
+
+        <div class="products-grid" id="products-grid">
+          <article class="product-card" data-id="scookiie-menta" data-name="Chocolate Scookiie — Menta" data-price="1500">
+            <div class="product-card__image">
+              <img src="assets/products/scookiie-menta.webp" alt="Chocolate Scookiie Menta" loading="lazy">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Scookiie Menta</h3>
+              <p class="product-card__meta">80g · 50% cacau</p>
+              <p class="product-card__price">1.500 Kz</p>
+              <button class="btn btn--small add-to-cart">Adicionar</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-id="scookiie-ginguba" data-name="Chocolate Scookiie — Ginguba" data-price="1500">
+            <div class="product-card__image">
+              <img src="assets/products/scookiie-ginguba.webp" alt="Chocolate Scookiie Ginguba" loading="lazy">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Scookiie Ginguba</h3>
+              <p class="product-card__meta">80g · 50% cacau</p>
+              <p class="product-card__price">1.500 Kz</p>
+              <button class="btn btn--small add-to-cart">Adicionar</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-id="scookiie-leite" data-name="Chocolate Scookiie — Ao Leite" data-price="1500">
+            <div class="product-card__image">
+              <img src="assets/products/scookiie-aoleite.webp" alt="Chocolate Scookiie Ao Leite" loading="lazy">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Scookiie Ao Leite</h3>
+              <p class="product-card__meta">80g · 50% cacau</p>
+              <p class="product-card__price">1.500 Kz</p>
+              <button class="btn btn--small add-to-cart">Adicionar</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-id="agua-pura" data-name="Água Pura 330ml" data-price="500">
+            <div class="product-card__image">
+              <img src="assets/products/agua-pura.webp" alt="Água Pura 330ml" loading="lazy">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Água Pura</h3>
+              <p class="product-card__meta">330ml</p>
+              <p class="product-card__price">500 Kz</p>
+              <button class="btn btn--small add-to-cart">Adicionar</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-id="coca-cola" data-name="Coca-Cola 350ml" data-price="700">
+            <div class="product-card__image">
+              <img src="assets/products/coca-cola.webp" alt="Coca-Cola 350ml" loading="lazy">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Coca-Cola</h3>
+              <p class="product-card__meta">350ml</p>
+              <p class="product-card__price">700 Kz</p>
+              <button class="btn btn--small add-to-cart">Adicionar</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-id="cuca" data-name="Cuca Cerveja 330ml" data-price="800">
+            <div class="product-card__image">
+              <img src="assets/products/cuca.webp" alt="Cuca Cerveja 330ml" loading="lazy">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Cuca</h3>
+              <p class="product-card__meta">330ml · Cerveja</p>
+              <p class="product-card__price">800 Kz</p>
+              <button class="btn btn--small add-to-cart">Adicionar</button>
+            </div>
+          </article>
+        </div>
+
+        <p class="minibar-note">Cocktails preparados no espaço · Fale com o barman/bartender no V17.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="assets/images/eldocarmologo.webp" alt="Eldo Carmo" width="40" height="40">
+        <span>Eldo Carmo Empreendimentos</span>
+      </div>
+      <p class="footer__copy">© 2026 Eldo Carmo. Todos os direitos reservados.</p>
+      <a href="index.html" class="footer__link">← Barber Shop</a>
+    </div>
+  </footer>
+
+  <div class="cart-drawer" id="cart-drawer" aria-hidden="true">
+    <div class="cart-drawer__overlay" id="cart-overlay"></div>
+    <div class="cart-drawer__panel">
+      <header class="cart-drawer__header">
+        <h2>Carrinho</h2>
+        <button class="cart-drawer__close" id="cart-close" aria-label="Fechar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </header>
+      <div class="cart-drawer__body" id="cart-items">
+        <p class="cart-empty">O carrinho está vazio.</p>
+      </div>
+      <footer class="cart-drawer__footer">
+        <div class="cart-total">
+          <span>Total</span>
+          <strong id="cart-total">0 Kz</strong>
+        </div>
+        <button class="btn btn--primary btn--full" id="checkout-btn" disabled>
+          Encomendar via WhatsApp
+        </button>
+        <button type="button" class="btn btn--ghost btn--full cart-clear" id="cart-clear" disabled>
+          Limpar carrinho
+        </button>
+      </footer>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
