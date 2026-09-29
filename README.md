@@ -116,6 +116,30 @@ Also listed: 930 095 886 / 925 184 386 (barbershop secondary)
 
 > **Convention:** Every important update lists the exact files changed so you can download only those and push to GitHub.
 
+### 2026-09-29 — Soft pill buttons (Kylie-style)
+
+Buttons: filled soft pills (border-radius 999px), no heavy borders, sentence-case. Primary = black fill; ghost / service / dark sections = white fill.
+
+**Barbershop**
+- `barbershop/css/style.css`
+
+**Root**
+- `README.md`
+
+### 2026-09-29 — Experience video section
+
+Horizontal scroll “A Experiência Eldo Carmo” (Ambiente / Corte / Detalhe / Barba) right after Serviços. Tap to play, one video at a time.
+
+**Barbershop**
+- `barbershop/index.html` (experience section)
+- `barbershop/css/style.css` (experience track + cards)
+- `barbershop/js/main.js` (play/pause)
+- `barbershop/assets/videos/exp-*.mp4` *(4 clips)*
+- `barbershop/assets/videos/poster-*.webp` *(4 posters)*
+
+**Root**
+- `README.md`
+
 ### 2026-09-29 — Service overlays, booking form, rounder corners
 
 Service cards: text + dark gradient over image + Agendar button (pre-fills service). Full booking form → WhatsApp. Global border-radius 14px.
