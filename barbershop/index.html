@@ -159,54 +159,64 @@
       </header>
     </div>
 
-    <div class="experience-track" id="experience-track">
-      <article class="experience-card">
-        <video class="experience-card__video" poster="assets/videos/poster-ambiente.webp" muted playsinline loop preload="metadata">
-          <source src="assets/videos/exp-ambiente.mp4" type="video/mp4">
-        </video>
-        <div class="experience-card__overlay">
-          <button type="button" class="experience-card__play" aria-label="Reproduzir">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </button>
-          <p class="experience-card__label">Ambiente</p>
-        </div>
-      </article>
+    <div class="experience-wrap">
+      <button type="button" class="experience-nav experience-nav--prev" id="experience-prev" aria-label="Anterior">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
 
-      <article class="experience-card">
-        <video class="experience-card__video" poster="assets/videos/poster-corte.webp" muted playsinline loop preload="metadata">
-          <source src="assets/videos/exp-corte.mp4" type="video/mp4">
-        </video>
-        <div class="experience-card__overlay">
-          <button type="button" class="experience-card__play" aria-label="Reproduzir">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </button>
-          <p class="experience-card__label">Corte</p>
-        </div>
-      </article>
+      <div class="experience-track" id="experience-track">
+        <article class="experience-card">
+          <video class="experience-card__video" poster="assets/videos/poster-ambiente.webp" muted playsinline preload="metadata">
+            <source src="assets/videos/exp-ambiente.mp4" type="video/mp4">
+          </video>
+          <div class="experience-card__overlay">
+            <button type="button" class="experience-card__play" aria-label="Reproduzir">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <p class="experience-card__label">Ambiente</p>
+          </div>
+        </article>
 
-      <article class="experience-card">
-        <video class="experience-card__video" poster="assets/videos/poster-detalhe.webp" muted playsinline loop preload="metadata">
-          <source src="assets/videos/exp-detalhe.mp4" type="video/mp4">
-        </video>
-        <div class="experience-card__overlay">
-          <button type="button" class="experience-card__play" aria-label="Reproduzir">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </button>
-          <p class="experience-card__label">Detalhe</p>
-        </div>
-      </article>
+        <article class="experience-card">
+          <video class="experience-card__video" poster="assets/videos/poster-corte.webp" muted playsinline preload="metadata">
+            <source src="assets/videos/exp-corte.mp4" type="video/mp4">
+          </video>
+          <div class="experience-card__overlay">
+            <button type="button" class="experience-card__play" aria-label="Reproduzir">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <p class="experience-card__label">Corte</p>
+          </div>
+        </article>
 
-      <article class="experience-card">
-        <video class="experience-card__video" poster="assets/videos/poster-barba.webp" muted playsinline loop preload="metadata">
-          <source src="assets/videos/exp-barba.mp4" type="video/mp4">
-        </video>
-        <div class="experience-card__overlay">
-          <button type="button" class="experience-card__play" aria-label="Reproduzir">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </button>
-          <p class="experience-card__label">Barba</p>
-        </div>
-      </article>
+        <article class="experience-card">
+          <video class="experience-card__video" poster="assets/videos/poster-detalhe.webp" muted playsinline preload="metadata">
+            <source src="assets/videos/exp-detalhe.mp4" type="video/mp4">
+          </video>
+          <div class="experience-card__overlay">
+            <button type="button" class="experience-card__play" aria-label="Reproduzir">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <p class="experience-card__label">Detalhe</p>
+          </div>
+        </article>
+
+        <article class="experience-card">
+          <video class="experience-card__video" poster="assets/videos/poster-barba.webp" muted playsinline preload="metadata">
+            <source src="assets/videos/exp-barba.mp4" type="video/mp4">
+          </video>
+          <div class="experience-card__overlay">
+            <button type="button" class="experience-card__play" aria-label="Reproduzir">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <p class="experience-card__label">Barba</p>
+          </div>
+        </article>
+      </div>
+
+      <button type="button" class="experience-nav experience-nav--next" id="experience-next" aria-label="Seguinte">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
     </div>
   </section>
 
