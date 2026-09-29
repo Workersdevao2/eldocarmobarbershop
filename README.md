@@ -116,6 +116,30 @@ Also listed: 930 095 886 / 925 184 386 (barbershop secondary)
 
 > **Convention:** Every important update lists the exact files changed so you can download only those and push to GitHub.
 
+### 2026-09-29 — Barbershop service cards with real photos
+
+Each service card now has its promo image. Design & Desenhos price updated to 3.000 Kz (from official promo).
+
+**Barbershop**
+- `barbershop/index.html` (service cards structure + images + Design price)
+- `barbershop/css/style.css` (service-card image styles)
+- `barbershop/assets/images/service-classico.webp` *(new)*
+- `barbershop/assets/images/service-corte-barba.webp` *(new)*
+- `barbershop/assets/images/service-fade.webp` *(new)*
+- `barbershop/assets/images/service-design.webp` *(new)*
+- `barbershop/assets/images/service-trancas.webp` *(new)*
+- `barbershop/assets/images/service-barba.webp` *(new)*
+
+**Root**
+- `README.md`
+
+### 2026-09-29 — Portal mobile layout (ENTRAR clear of center logo)
+
+Glamorize block centered in the top half; bottom padding keeps ENTRAR clear of the center logo. Barbershop left as-is. Center logo slightly smaller on mobile.
+
+**Portal**
+- `portal/css/style.css` (mobile + 480px media queries)
+
 ### 2026-09-29 — Preview URLs wired up
 
 Cross-site links updated to current Cloudflare Workers preview domains.
