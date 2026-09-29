@@ -322,12 +322,97 @@ ul {
   display: flex;
   align-items: center;
   padding: 8rem 0 5rem;
-  background: linear-gradient(160deg, var(--cream) 0%, #f0ebe3 100%);
   position: relative;
+  background-color: var(--black);
+  overflow: hidden;
+}
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__still,
+.hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.hero__still {
+  z-index: 2;
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+.hero__still.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero__video {
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.hero__video.is-visible {
+  opacity: 1;
+  z-index: 2;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: linear-gradient(
+    105deg,
+    rgba(0, 0, 0, 0.82) 0%,
+    rgba(0, 0, 0, 0.55) 42%,
+    rgba(0, 0, 0, 0.25) 100%
+  );
+  pointer-events: none;
 }
 
 .hero__content {
   max-width: 640px;
+  position: relative;
+  z-index: 4;
+}
+
+.hero__dots {
+  position: absolute;
+  bottom: 1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+}
+
+.hero__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.hero__dot.is-active {
+  background: var(--white);
+  transform: scale(1.25);
+}
+
+.hero__dot:hover {
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .hero__eyebrow {
@@ -345,13 +430,13 @@ ul {
   line-height: 1.15;
   letter-spacing: -0.02em;
   margin-bottom: 1.25rem;
-  color: var(--black);
+  color: var(--white);
 }
 
 .hero__subtitle {
   font-size: 1.05rem;
   font-weight: var(--font-light);
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.78);
   margin-bottom: 2.5rem;
   max-width: 420px;
 }
@@ -360,6 +445,18 @@ ul {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+/* Ghost button on dark hero */
+.hero .btn--ghost {
+  border-color: rgba(255, 255, 255, 0.45);
+  color: var(--white);
+}
+
+.hero .btn--ghost:hover {
+  border-color: var(--white);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--white);
 }
 
 /* ========== SECTIONS ========== */
@@ -717,6 +814,113 @@ ul {
 
 .experience-card.is-playing .experience-card__label {
   opacity: 0;
+}
+
+/* ========== MINI-BAR TEASER CARD ========== */
+.minibar-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: var(--line) solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--cream);
+  text-decoration: none;
+  color: inherit;
+  max-width: 720px;
+  margin: 0 auto;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.minibar-card:hover {
+  border-color: rgba(201, 162, 39, 0.4);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+}
+
+@media (min-width: 640px) {
+  .minibar-card {
+    grid-template-columns: 1.1fr 1fr;
+  }
+}
+
+.minibar-card__media {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+@media (min-width: 640px) {
+  .minibar-card__media {
+    aspect-ratio: auto;
+    min-height: 320px;
+  }
+}
+
+.minibar-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.minibar-card:hover .minibar-card__media img {
+  transform: scale(1.04);
+}
+
+.minibar-card__body {
+  padding: 1.5rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .minibar-card__body {
+    padding: 2rem 1.75rem;
+  }
+}
+
+.minibar-card__eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.minibar-card__title {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: var(--font-medium);
+  line-height: 1.25;
+  margin-bottom: 0.65rem;
+}
+
+.minibar-card__text {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.minibar-card__cta {
+  font-size: 0.85rem;
+  font-weight: var(--font-medium);
+  color: var(--black);
+  letter-spacing: 0.02em;
+}
+
+.minibar-card:hover .minibar-card__cta {
+  color: var(--gold);
+}
+
+.minibar-page {
+  padding-top: 7rem;
+}
+
+.minibar-note {
+  text-align: center;
+  margin-top: 2.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
 }
 
 /* ========== PRODUCTS ========== */
