@@ -6,6 +6,7 @@
   <meta name="description" content="Eldo Carmo Barber Shop — A melhor experiência de barbearia em Luanda. Cortes premium, mini-bar e Chocolate Scookiie.">
   <title>Eldo Carmo Barber Shop | Luanda</title>
   
+  <link rel="preload" href="assets/images/hero.webp" as="image">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="assets/images/eldocarmologo.webp" type="image/webp">
 </head>
@@ -21,7 +22,7 @@
       <nav class="nav" id="nav" aria-label="Menu principal">
         <ul class="nav__list">
           <li><a href="#servicos" class="nav__link">Serviços</a></li>
-          <li><a href="#produtos" class="nav__link">Produtos</a></li>
+          <li><a href="minibar.html" class="nav__link">Mini-Bar</a></li>
           <li><a href="#galeria" class="nav__link">Galeria</a></li>
           <li><a href="#lubango" class="nav__link">Lubango</a></li>
           <li><a href="#agendar" class="nav__link">Agendar</a></li>
@@ -48,7 +49,17 @@
   </header>
 
   <!-- ========== HERO ========== -->
-  <section class="hero">
+  <section class="hero" id="hero">
+    <div class="hero__media" aria-hidden="true">
+      <img class="hero__still" id="hero-still" src="assets/images/hero.webp" alt="" data-hero-slide="0">
+      <video class="hero__video" id="hero-video-1" muted playsinline preload="auto" poster="assets/images/hero.webp" data-hero-slide="1">
+        <source src="assets/videos/hero.mp4" type="video/mp4">
+      </video>
+      <video class="hero__video" id="hero-video-2" muted playsinline preload="metadata" data-hero-slide="2">
+        <source src="assets/videos/hero-2.mp4" type="video/mp4">
+      </video>
+      <div class="hero__overlay"></div>
+    </div>
     <div class="hero__content container">
       <p class="hero__eyebrow">Barber Shop · Luanda</p>
       <h1 class="hero__title">A arte de<br>ser impecável</h1>
@@ -59,6 +70,11 @@
         </a>
         <a href="#servicos" class="btn btn--ghost">Ver Serviços</a>
       </div>
+    </div>
+    <div class="hero__dots" role="tablist" aria-label="Conteúdo do hero">
+      <button type="button" class="hero__dot is-active" data-hero-go="0" aria-label="Foto 1"></button>
+      <button type="button" class="hero__dot" data-hero-go="1" aria-label="Vídeo 1"></button>
+      <button type="button" class="hero__dot" data-hero-go="2" aria-label="Vídeo 2"></button>
     </div>
   </section>
 
@@ -224,85 +240,23 @@
   <section class="section section--alt" id="produtos">
     <div class="container">
       <header class="section__header">
-        <p class="section__eyebrow">Mini Bar</p>
-        <h2 class="section__title">Produtos</h2>
+        <p class="section__eyebrow">No espaço</p>
+        <h2 class="section__title">Mini-Bar</h2>
         <div class="section__line"></div>
-        <p class="section__intro">Chocolate Scookiie e bebidas. Disponível a retalho no nosso espaço V17.</p>
+        <p class="section__intro">Snacks, cocktails e bebidas — incluindo Chocolate Scookiie.</p>
       </header>
 
-      <div class="products-grid" id="products-grid">
-        <article class="product-card" data-id="scookiie-menta" data-name="Chocolate Scookiie — Menta" data-price="1500">
-          <div class="product-card__image">
-            <img src="assets/products/scookiie-menta.webp" alt="Chocolate Scookiie Menta" loading="lazy">
-          </div>
-          <div class="product-card__body">
-            <h3 class="product-card__title">Scookiie Menta</h3>
-            <p class="product-card__meta">80g · 50% cacau</p>
-            <p class="product-card__price">1.500 Kz</p>
-            <button class="btn btn--small add-to-cart">Adicionar</button>
-          </div>
-        </article>
-
-        <article class="product-card" data-id="scookiie-ginguba" data-name="Chocolate Scookiie — Ginguba" data-price="1500">
-          <div class="product-card__image">
-            <img src="assets/products/scookiie-ginguba.webp" alt="Chocolate Scookiie Ginguba" loading="lazy">
-          </div>
-          <div class="product-card__body">
-            <h3 class="product-card__title">Scookiie Ginguba</h3>
-            <p class="product-card__meta">80g · 50% cacau</p>
-            <p class="product-card__price">1.500 Kz</p>
-            <button class="btn btn--small add-to-cart">Adicionar</button>
-          </div>
-        </article>
-
-        <article class="product-card" data-id="scookiie-leite" data-name="Chocolate Scookiie — Ao Leite" data-price="1500">
-          <div class="product-card__image">
-            <img src="assets/products/scookiie-aoleite.webp" alt="Chocolate Scookiie Ao Leite" loading="lazy">
-          </div>
-          <div class="product-card__body">
-            <h3 class="product-card__title">Scookiie Ao Leite</h3>
-            <p class="product-card__meta">80g · 50% cacau</p>
-            <p class="product-card__price">1.500 Kz</p>
-            <button class="btn btn--small add-to-cart">Adicionar</button>
-          </div>
-        </article>
-
-        <article class="product-card" data-id="agua-pura" data-name="Água Pura 330ml" data-price="500">
-          <div class="product-card__image">
-            <img src="assets/products/agua-pura.webp" alt="Água Pura 330ml" loading="lazy">
-          </div>
-          <div class="product-card__body">
-            <h3 class="product-card__title">Água Pura</h3>
-            <p class="product-card__meta">330ml</p>
-            <p class="product-card__price">500 Kz</p>
-            <button class="btn btn--small add-to-cart">Adicionar</button>
-          </div>
-        </article>
-
-        <article class="product-card" data-id="coca-cola" data-name="Coca-Cola 350ml" data-price="700">
-          <div class="product-card__image">
-            <img src="assets/products/coca-cola.webp" alt="Coca-Cola 350ml" loading="lazy">
-          </div>
-          <div class="product-card__body">
-            <h3 class="product-card__title">Coca-Cola</h3>
-            <p class="product-card__meta">350ml</p>
-            <p class="product-card__price">700 Kz</p>
-            <button class="btn btn--small add-to-cart">Adicionar</button>
-          </div>
-        </article>
-
-        <article class="product-card" data-id="cuca" data-name="Cuca Cerveja 330ml" data-price="800">
-          <div class="product-card__image">
-            <img src="assets/products/cuca.webp" alt="Cuca Cerveja 330ml" loading="lazy">
-          </div>
-          <div class="product-card__body">
-            <h3 class="product-card__title">Cuca</h3>
-            <p class="product-card__meta">330ml · Cerveja</p>
-            <p class="product-card__price">800 Kz</p>
-            <button class="btn btn--small add-to-cart">Adicionar</button>
-          </div>
-        </article>
-      </div>
+      <a href="minibar.html" class="minibar-card">
+        <div class="minibar-card__media">
+          <img src="assets/images/minibar-card.webp" alt="Chocolate Scookiie Ginguba — Eldo Carmo Mini-Bar" loading="lazy">
+        </div>
+        <div class="minibar-card__body">
+          <p class="minibar-card__eyebrow">Eldo Carmo Mini-Bar</p>
+          <h3 class="minibar-card__title">Snacks, cocktails e bebidas</h3>
+          <p class="minibar-card__text">Chocolate Scookiie, refrigerantes, cerveja e cocktails preparados no V17.</p>
+          <span class="minibar-card__cta">Ver produtos →</span>
+        </div>
+      </a>
     </div>
   </section>
 
