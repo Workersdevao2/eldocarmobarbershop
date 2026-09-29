@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const cartCountEl = document.getElementById('cart-count');
   const cartTotalEl = document.getElementById('cart-total');
   const checkoutBtn = document.getElementById('checkout-btn');
+  const cartClearBtn = document.getElementById('cart-clear');
   const bookingForm = document.getElementById('booking-form');
 
   // ---------- State ----------
@@ -72,8 +73,18 @@ document.addEventListener('DOMContentLoaded', () => {
     openCart();
   }
 
-  function removeFromCart(id) {
-    cart = cart.filter((item) => item.id !== id);
+  function changeQty(id, delta) {
+    const item = cart.find((i) => i.id === id);
+    if (!item) return;
+    item.qty += delta;
+    if (item.qty <= 0) {
+      cart = cart.filter((i) => i.id !== id);
+    }
+    saveCart();
+  }
+
+  function clearCart() {
+    cart = [];
     saveCart();
   }
 
@@ -88,12 +99,14 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderCart() {
     const total = getTotal();
     const count = cart.reduce((sum, item) => sum + item.qty, 0);
+    const empty = cart.length === 0;
 
     cartCountEl.textContent = count;
     cartTotalEl.textContent = formatPrice(total);
-    checkoutBtn.disabled = cart.length === 0;
+    checkoutBtn.disabled = empty;
+    if (cartClearBtn) cartClearBtn.disabled = empty;
 
-    if (cart.length === 0) {
+    if (empty) {
       cartItemsEl.innerHTML = '<p class="cart-empty">O carrinho está vazio.</p>';
       return;
     }
@@ -104,18 +117,21 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="cart-item">
         <div class="cart-item__info">
           <h4>${item.name}</h4>
-          <p>${item.qty} × ${formatPrice(item.price)}</p>
+          <p>${formatPrice(item.price * item.qty)}</p>
         </div>
-        <button class="cart-item__remove" data-id="${item.id}">Remover</button>
+        <div class="cart-item__qty">
+          <button type="button" class="cart-item__qty-btn" data-id="${item.id}" data-delta="-1" aria-label="Diminuir">−</button>
+          <span class="cart-item__qty-val">${item.qty}</span>
+          <button type="button" class="cart-item__qty-btn" data-id="${item.id}" data-delta="1" aria-label="Aumentar">+</button>
+        </div>
       </div>
     `
       )
       .join('');
 
-    // Bind remove buttons
-    cartItemsEl.querySelectorAll('.cart-item__remove').forEach((btn) => {
+    cartItemsEl.querySelectorAll('.cart-item__qty-btn').forEach((btn) => {
       btn.addEventListener('click', () => {
-        removeFromCart(btn.dataset.id);
+        changeQty(btn.dataset.id, Number(btn.dataset.delta));
       });
     });
   }
@@ -129,6 +145,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Clear cart
+  cartClearBtn?.addEventListener('click', () => {
+    if (cart.length === 0) return;
+    clearCart();
+  });
+
   // Checkout → WhatsApp
   checkoutBtn?.addEventListener('click', () => {
     if (cart.length === 0) return;
@@ -138,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
     );
     const total = formatPrice(getTotal());
     const message = encodeURIComponent(
-      `Olá! Gostaria de encomendar os seguintes produtos da Eldo Carmo:\n\n${lines.join('\n')}\n\nTotal: ${total}\n\nObrigado!`
+      `Olá! Gostaria de encomendar os seguintes produtos da Eldo Carmo Barber Shop:\n\n${lines.join('\n')}\n\nTotal: ${total}\n\nObrigado!`
     );
 
     window.open(`https://wa.me/244923929074?text=${message}`, '_blank');
