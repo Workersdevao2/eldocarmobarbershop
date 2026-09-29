@@ -116,19 +116,15 @@ Also listed: 930 095 886 / 925 184 386 (barbershop secondary)
 
 > **Convention:** Every important update lists the exact files changed so you can download only those and push to GitHub.
 
-### 2026-09-29 — Barbershop service cards with real photos
+### 2026-09-29 — Service overlays, booking form, rounder corners
 
-Each service card now has its promo image. Design & Desenhos price updated to 3.000 Kz (from official promo).
+Service cards: text + dark gradient over image + Agendar button (pre-fills service). Full booking form → WhatsApp. Global border-radius 14px.
 
 **Barbershop**
-- `barbershop/index.html` (service cards structure + images + Design price)
-- `barbershop/css/style.css` (service-card image styles)
-- `barbershop/assets/images/service-classico.webp` *(new)*
-- `barbershop/assets/images/service-corte-barba.webp` *(new)*
-- `barbershop/assets/images/service-fade.webp` *(new)*
-- `barbershop/assets/images/service-design.webp` *(new)*
-- `barbershop/assets/images/service-trancas.webp` *(new)*
-- `barbershop/assets/images/service-barba.webp` *(new)*
+- `barbershop/index.html` (overlay cards + Agendar section/form + nav)
+- `barbershop/css/style.css` (overlay styles, form-row, select, --radius: 14px)
+- `barbershop/js/main.js` (booking form + service pre-fill)
+- `barbershop/assets/images/service-*.webp` (6 service images)
 
 **Root**
 - `README.md`
