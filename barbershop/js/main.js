@@ -224,6 +224,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Experience carousel arrows
+  const expTrack = document.getElementById('experience-track');
+  const expPrev = document.getElementById('experience-prev');
+  const expNext = document.getElementById('experience-next');
+
+  if (expTrack && expPrev && expNext) {
+    const scrollByCard = (dir) => {
+      const card = expTrack.querySelector('.experience-card');
+      if (!card) return;
+      const step = card.offsetWidth + 16; // card + gap
+      expTrack.scrollBy({ left: dir * step, behavior: 'smooth' });
+    };
+
+    const updateNav = () => {
+      const maxScroll = expTrack.scrollWidth - expTrack.clientWidth - 2;
+      expPrev.disabled = expTrack.scrollLeft <= 2;
+      expNext.disabled = expTrack.scrollLeft >= maxScroll;
+    };
+
+    expPrev.addEventListener('click', () => scrollByCard(-1));
+    expNext.addEventListener('click', () => scrollByCard(1));
+    expTrack.addEventListener('scroll', updateNav, { passive: true });
+    window.addEventListener('resize', updateNav);
+    updateNav();
+  }
+
   // ---------- Header scroll effect ----------
   let lastScroll = 0;
   const header = document.getElementById('header');
