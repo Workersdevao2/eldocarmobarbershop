@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Eldo Carmo Barber Shop — A melhor experiência de barbearia em Luanda. Cortes premium, mini-bar e Chocolate Scookiie.">
+  <title>Eldo Carmo Barber Shop | Luanda</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/images/eldocarmologo.webp" type="image/webp">
+</head>
+<body>
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="assets/images/eldocarmologo.webp" alt="Eldo Carmo Barber Shop" width="48" height="48">
+        <span>Eldo Carmo</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Menu principal">
+        <ul class="nav__list">
+          <li><a href="#servicos" class="nav__link">Serviços</a></li>
+          <li><a href="#produtos" class="nav__link">Produtos</a></li>
+          <li><a href="#galeria" class="nav__link">Galeria</a></li>
+          <li><a href="#lubango" class="nav__link">Lubango</a></li>
+          <li><a href="#contacto" class="nav__link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="cart-btn" id="cart-btn" aria-label="Carrinho">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+          <span class="cart-btn__count" id="cart-count">0</span>
+        </button>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="hero__content container">
+      <p class="hero__eyebrow">Barber Shop · Luanda</p>
+      <h1 class="hero__title">A arte de<br>ser impecável</h1>
+      <p class="hero__subtitle">Cortes premium, ambiente exclusivo e a experiência Eldo Carmo.</p>
+      <div class="hero__ctas">
+        <a href="https://wa.me/244923929074?text=Olá! Gostaria de marcar um horário na Eldo Carmo Barber Shop." class="btn btn--primary" target="_blank" rel="noopener">
+          Marcar Agora
+        </a>
+        <a href="#servicos" class="btn btn--ghost">Ver Serviços</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES ========== -->
+  <section class="section" id="servicos">
+    <div class="container">
+      <header class="section__header">
+        <p class="section__eyebrow">O que fazemos</p>
+        <h2 class="section__title">Serviços</h2>
+        <div class="section__line"></div>
+      </header>
+
+      <div class="services-grid">
+        <!-- Placeholder prices — replace with real ones -->
+        <article class="service-card">
+          <h3 class="service-card__title">Corte Clássico</h3>
+          <p class="service-card__desc">Corte tradicional com acabamento preciso e atenção aos detalhes.</p>
+          <p class="service-card__price">A partir de 2.500 Kz</p>
+        </article>
+
+        <article class="service-card">
+          <h3 class="service-card__title">Corte + Barba</h3>
+          <p class="service-card__desc">Combinação completa para um visual impecável e bem cuidado.</p>
+          <p class="service-card__price">A partir de 4.000 Kz</p>
+        </article>
+
+        <article class="service-card">
+          <h3 class="service-card__title">Fade / Degradê</h3>
+          <p class="service-card__desc">Transições suaves e modernas, do baixo ao médio e alto fade.</p>
+          <p class="service-card__price">A partir de 3.000 Kz</p>
+        </article>
+
+        <article class="service-card">
+          <h3 class="service-card__title">Design & Desenhos</h3>
+          <p class="service-card__desc">Linhas, padrões e arte no cabelo com precisão artística.</p>
+          <p class="service-card__price">A partir de 3.500 Kz</p>
+        </article>
+
+        <article class="service-card">
+          <h3 class="service-card__title">Tranças & Twists</h3>
+          <p class="service-card__desc">Estilos protegidos e elegantes para todas as idades.</p>
+          <p class="service-card__price">Consultar</p>
+        </article>
+
+        <article class="service-card">
+          <h3 class="service-card__title">Barboterapia</h3>
+          <p class="service-card__desc">Tratamento completo de barba com toalha quente e produtos premium.</p>
+          <p class="service-card__price">A partir de 2.000 Kz</p>
+        </article>
+      </div>
+
+      <p class="section__note">* Preços sujeitos a confirmação. Contacte-nos para o valor exacto.</p>
+    </div>
+  </section>
+
+  <!-- ========== PRODUCTS / MINI-BAR ========== -->
+  <section class="section section--alt" id="produtos">
+    <div class="container">
+      <header class="section__header">
+        <p class="section__eyebrow">Mini Bar</p>
+        <h2 class="section__title">Produtos</h2>
+        <div class="section__line"></div>
+        <p class="section__intro">Chocolate Scookiie (Menta, Ginguba e Ao Leite) e selecção de bebidas e snacks. Disponível a retalho e por grosso no nosso espaço V17.</p>
+      </header>
+
+      <div class="products-grid" id="products-grid">
+        <!-- Chocolate Scookiie products -->
+        <article class="product-card" data-id="scookiie-menta" data-name="Chocolate Scookiie — Menta" data-price="1500">
+          <div class="product-card__image">
+            <img src="assets/products/chocolate-display.webp" alt="Chocolate Scookiie Menta" loading="lazy">
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__title">Scookiie Menta</h3>
+            <p class="product-card__meta">80g · 50% Cacau</p>
+            <p class="product-card__price">1.500 Kz</p>
+            <button class="btn btn--small add-to-cart">Adicionar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-id="scookiie-ginguba" data-name="Chocolate Scookiie — Ginguba" data-price="1500">
+          <div class="product-card__image">
+            <img src="assets/products/chocolate-ginguba.webp" alt="Chocolate Scookiie Ginguba" loading="lazy">
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__title">Scookiie Ginguba</h3>
+            <p class="product-card__meta">80g · 50% Cacau</p>
+            <p class="product-card__price">1.500 Kz</p>
+            <button class="btn btn--small add-to-cart">Adicionar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-id="scookiie-leite" data-name="Chocolate Scookiie — Ao Leite" data-price="1500">
+          <div class="product-card__image">
+            <img src="assets/products/chocolate-closeup.webp" alt="Chocolate Scookiie Ao Leite" loading="lazy">
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__title">Scookiie Ao Leite</h3>
+            <p class="product-card__meta">80g · 50% Cacau</p>
+            <p class="product-card__price">1.500 Kz</p>
+            <button class="btn btn--small add-to-cart">Adicionar</button>
+          </div>
+        </article>
+
+        <!-- Placeholder extra products -->
+        <article class="product-card" data-id="agua" data-name="Água Mineral" data-price="500">
+          <div class="product-card__image product-card__image--placeholder">
+            <span>Água</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__title">Água Mineral</h3>
+            <p class="product-card__meta">500ml</p>
+            <p class="product-card__price">500 Kz</p>
+            <button class="btn btn--small add-to-cart">Adicionar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-id="refrigerante" data-name="Refrigerante" data-price="700">
+          <div class="product-card__image product-card__image--placeholder">
+            <span>Drink</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__title">Refrigerante</h3>
+            <p class="product-card__meta">Lata / Garrafa</p>
+            <p class="product-card__price">700 Kz</p>
+            <button class="btn btn--small add-to-cart">Adicionar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-id="snack" data-name="Snack Sortido" data-price="1000">
+          <div class="product-card__image product-card__image--placeholder">
+            <span>Snack</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__title">Snack Sortido</h3>
+            <p class="product-card__meta">Selecção do dia</p>
+            <p class="product-card__price">1.000 Kz</p>
+            <button class="btn btn--small add-to-cart">Adicionar</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALLERY TEASER ========== -->
+  <section class="section" id="galeria">
+    <div class="container">
+      <header class="section__header">
+        <p class="section__eyebrow">Trabalhos</p>
+        <h2 class="section__title">Galeria</h2>
+        <div class="section__line"></div>
+      </header>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="assets/images/exterior-facade.webp" alt="Fachada Eldo Carmo Barber Shop — Centralidade do Kilamba" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/cuts-styles.webp" alt="Cortes e estilos Eldo Carmo" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/cuts-curly.webp" alt="Cortes em cabelo cacheado" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/interior-murals.webp" alt="Murais artísticos no interior da Eldo Carmo" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/cuts-beard.webp" alt="Acabamento de barba e fade" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/cuts-braids.webp" alt="Tranças e desenhos" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/interior-chairs.webp" alt="Cadeiras e ambiente premium" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/cuts-kids.webp" alt="Cortes para crianças" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/owner-suit.webp" alt="Johnny Berry na Eldo Carmo" loading="lazy">
+        </div>
+      </div>
+
+      <div class="section__cta-wrap">
+        <a href="https://www.instagram.com/eldo_carmo/" class="btn btn--ghost" target="_blank" rel="noopener">
+          Ver mais no Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LUBANGO ========== -->
+  <section class="section section--dark" id="lubango">
+    <div class="container">
+      <header class="section__header">
+        <p class="section__eyebrow">Expansão</p>
+        <h2 class="section__title">Lubango — Estamos a chegar</h2>
+        <div class="section__line section__line--light"></div>
+      </header>
+
+      <div class="lubango-content">
+        <p>A Eldo Carmo está a reforçar a sua equipa no Lubango e quer contar contigo.</p>
+        
+        <div class="lubango-roles">
+          <span>Barbeiros</span>
+          <span>Barmans</span>
+          <span>Técnicos de Unhas</span>
+          <span>Atendimento ao Público</span>
+        </div>
+
+        <p class="lubango-location">
+          <strong>Local:</strong> Bairro Lucrécia, Rua da Alma<br>
+          (antigo Emolube / Impolube) · Lubango
+        </p>
+
+        <p class="lubango-contact">
+          <strong>Candidaturas:</strong> recrutamento.eldocarmo@gmail.com<br>
+          <strong>WhatsApp:</strong> 924 071 971
+        </p>
+
+        <a href="https://wa.me/244924071971?text=Olá! Tenho interesse em candidatar-me para a equipa Eldo Carmo no Lubango." class="btn btn--primary" target="_blank" rel="noopener">
+          Candidatar-me
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="section" id="contacto">
+    <div class="container">
+      <header class="section__header">
+        <p class="section__eyebrow">Fale connosco</p>
+        <h2 class="section__title">Contacto</h2>
+        <div class="section__line"></div>
+      </header>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <h3>WhatsApp</h3>
+            <a href="https://wa.me/244923929074" target="_blank" rel="noopener">923 929 074</a>
+          </div>
+          <div class="contact-item">
+            <h3>Localização</h3>
+            <p>Centralidade do Kilamba<br>V17 · Luanda, Angola</p>
+          </div>
+          <div class="contact-item">
+            <h3>Horário</h3>
+            <p>Segunda a Domingo<br>07:00 – 22:00</p>
+          </div>
+          <div class="contact-item">
+            <h3>Redes</h3>
+            <div class="social-links">
+              <a href="https://www.instagram.com/eldo_carmo/" target="_blank" rel="noopener">Instagram</a>
+              <a href="https://www.facebook.com/EldoCarmoBeleza" target="_blank" rel="noopener">Facebook</a>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contact-form">
+          <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" required placeholder="O seu nome">
+          </div>
+          <div class="form-group">
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" rows="4" required placeholder="Como podemos ajudar?"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary">Enviar via WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="assets/images/eldocarmologo.webp" alt="Eldo Carmo" width="40" height="40">
+        <span>Eldo Carmo Empreendimentos</span>
+      </div>
+      <p class="footer__copy">© 2026 Eldo Carmo. Todos os direitos reservados.</p>
+      <a href="https://eldocarmo.com" class="footer__link">Portal Eldo Carmo</a>
+    </div>
+  </footer>
+
+  <!-- ========== CART DRAWER ========== -->
+  <div class="cart-drawer" id="cart-drawer" aria-hidden="true">
+    <div class="cart-drawer__overlay" id="cart-overlay"></div>
+    <div class="cart-drawer__panel">
+      <header class="cart-drawer__header">
+        <h2>Carrinho</h2>
+        <button class="cart-drawer__close" id="cart-close" aria-label="Fechar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </header>
+      <div class="cart-drawer__body" id="cart-items">
+        <p class="cart-empty">O carrinho está vazio.</p>
+      </div>
+      <footer class="cart-drawer__footer">
+        <div class="cart-total">
+          <span>Total</span>
+          <strong id="cart-total">0 Kz</strong>
+        </div>
+        <button class="btn btn--primary btn--full" id="checkout-btn" disabled>
+          Finalizar via WhatsApp
+        </button>
+      </footer>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
