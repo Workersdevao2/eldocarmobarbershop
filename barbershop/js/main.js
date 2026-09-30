@@ -6,7 +6,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   // ---------- Elements ----------
   const hamburger = document.getElementById('hamburger');
-  const nav = document.getElementById('nav');
   const cartBtn = document.getElementById('cart-btn');
   const cartDrawer = document.getElementById('cart-drawer');
   const cartOverlay = document.getElementById('cart-overlay');
@@ -75,22 +74,52 @@ document.addEventListener('DOMContentLoaded', () => {
     heroTimer = setTimeout(() => showHeroSlide(1), 5000);
   }
 
-  // ---------- Hamburger ----------
-  hamburger?.addEventListener('click', () => {
-    const isOpen = hamburger.classList.toggle('is-active');
-    nav.classList.toggle('is-open', isOpen);
-    hamburger.setAttribute('aria-expanded', isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-  });
+  // ---------- Left menu drawer ----------
+  const menuDrawer = document.getElementById('menu-drawer');
+  const menuOverlay = document.getElementById('menu-overlay');
+  const menuClose = document.getElementById('menu-close');
 
-  // Close mobile nav on link click
-  nav?.querySelectorAll('.nav__link').forEach((link) => {
-    link.addEventListener('click', () => {
+  const openMenu = () => {
+    if (!menuDrawer) return;
+    menuDrawer.classList.add('is-open');
+    menuDrawer.setAttribute('aria-hidden', 'false');
+    if (hamburger) {
+      hamburger.classList.add('is-active');
+      hamburger.setAttribute('aria-expanded', 'true');
+    }
+    document.body.classList.add('menu-open');
+  };
+
+  const closeMenu = () => {
+    if (!menuDrawer) return;
+    menuDrawer.classList.remove('is-open');
+    menuDrawer.setAttribute('aria-hidden', 'true');
+    if (hamburger) {
       hamburger.classList.remove('is-active');
-      nav.classList.remove('is-open');
       hamburger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
+    }
+    document.body.classList.remove('menu-open');
+  };
+
+  if (hamburger) {
+    hamburger.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (menuDrawer && menuDrawer.classList.contains('is-open')) closeMenu();
+      else openMenu();
     });
+  }
+  if (menuOverlay) menuOverlay.addEventListener('click', closeMenu);
+  if (menuClose) menuClose.addEventListener('click', closeMenu);
+
+  if (menuDrawer) {
+    menuDrawer.querySelectorAll('.menu-drawer__link').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
   });
 
   // ---------- Cart Drawer ----------
@@ -326,17 +355,12 @@ document.addEventListener('DOMContentLoaded', () => {
     updateNav();
   }
 
-  // ---------- Header scroll effect ----------
-  let lastScroll = 0;
+  // ---------- Header scroll: transparent → solid ----------
   const header = document.getElementById('header');
-
-  window.addEventListener('scroll', () => {
-    const current = window.scrollY;
-    if (current > 80) {
-      header.style.boxShadow = '0 1px 0 rgba(0,0,0,0.06)';
-    } else {
-      header.style.boxShadow = 'none';
-    }
-    lastScroll = current;
-  });
+  const onScrollHeader = () => {
+    if (!header) return;
+    header.classList.toggle('is-scrolled', window.scrollY > 40);
+  };
+  window.addEventListener('scroll', onScrollHeader, { passive: true });
+  onScrollHeader();
 });
