@@ -20,19 +20,30 @@
   <header class="header" id="header">
     <div class="container header__inner">
       <div class="header__left">
-        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" type="button">
           <span class="hamburger__line"></span>
           <span class="hamburger__line"></span>
           <span class="hamburger__line"></span>
         </button>
         <a href="index.html" class="header__logo">
-          <img src="assets/images/eldocarmologo.webp" alt="Eldo Carmo Barber Shop" width="48" height="48">
-          <span>Eldo Carmo</span>
+          <img src="assets/images/eldocarmologo.webp" alt="Eldo Carmo Barbershop" width="48" height="48">
+          <span class="header__logo-text">
+            <span class="header__logo-name">Eldo Carmo Barbershop</span>
+            <span class="header__logo-sub">Johnny Berry</span>
+          </span>
         </a>
       </div>
 
+      <nav class="header__nav" aria-label="Menu principal">
+        <a href="#servicos" class="header__nav-link">Serviços</a>
+        <a href="minibar.html" class="header__nav-link">Mini-Bar</a>
+        <a href="#galeria" class="header__nav-link">Galeria</a>
+        <a href="#lubango" class="header__nav-link">Lubango</a>
+        <a href="#agendar" class="header__nav-link">Agendar</a>
+      </nav>
+
       <div class="header__actions">
-        <button class="cart-btn" id="cart-btn" aria-label="Carrinho">
+        <button class="cart-btn" id="cart-btn" aria-label="Carrinho" type="button">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
             <line x1="3" y1="6" x2="21" y2="6"/>
@@ -49,7 +60,7 @@
     <div class="menu-drawer__overlay" id="menu-overlay"></div>
     <aside class="menu-drawer__panel" role="dialog" aria-label="Menu">
       <div class="menu-drawer__head">
-        <span class="menu-drawer__brand">Eldo Carmo</span>
+        <span class="menu-drawer__brand">Eldo Carmo Barbershop</span>
         <button class="menu-drawer__close" id="menu-close" aria-label="Fechar">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <line x1="18" y1="6" x2="6" y2="18"/>
@@ -118,14 +129,11 @@
       <div class="hero__overlay"></div>
     </div>
     <div class="hero__content container">
-      <p class="hero__eyebrow">Barber Shop · Luanda</p>
       <h1 class="hero__title">A arte de<br>ser impecável</h1>
       <p class="hero__subtitle">Cortes premium, ambiente exclusivo e a experiência Eldo Carmo.</p>
       <div class="hero__ctas">
-        <a href="https://wa.me/244923929074?text=Olá! Gostaria de marcar um horário na Eldo Carmo Barber Shop." class="btn btn--primary" target="_blank" rel="noopener">
-          Marcar Agora
-        </a>
-        <a href="#servicos" class="btn btn--ghost">Ver Serviços</a>
+        <a href="https://wa.me/244923929074?text=Olá! Gostaria de marcar um horário na Eldo Carmo Barber Shop." class="btn btn--primary" target="_blank" rel="noopener">Marcar Agora</a>
+        <a href="#servicos" class="btn btn--ghost hero__btn-ghost">Ver Serviços</a>
       </div>
     </div>
     <div class="hero__dots" role="tablist" aria-label="Conteúdo do hero">
