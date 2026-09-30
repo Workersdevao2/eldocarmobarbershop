@@ -88,7 +88,12 @@ Push this folder to its own GitHub repo → Cloudflare Pages
 - Discovery: music logos + links
 - Hero: no “Barber Shop · Luanda”; fixed ghost CTA
 - Hero media: mobile crop unchanged; desktop uses centered cover so portrait video/image fills the screen
-- Mini-Bar: short full-bleed hero with Scookiie line-up image (`minibar-hero.webp`)
+- Mini-Bar: full-bleed hero under transparent header (same style as homepage)
+
+### 2026-09-30 — Mini-Bar header match homepage
+- Mini-Bar hero sits under fixed transparent header (white logo / hamburger / cart)
+- On scroll → solid cream header (`.is-scrolled`), same as homepage
+- Taller hero + overlay padding clears announce bar + nav
 
 ### 2026-09-30 — Agendar layout
 - Booking form first; contact info stacked under form
