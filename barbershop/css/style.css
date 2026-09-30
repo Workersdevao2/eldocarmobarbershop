@@ -1133,17 +1133,26 @@ ul {
 .contact-grid {
   display: grid;
   gap: 3rem;
+  max-width: 640px;
+  margin: 0 auto;
 }
 
-@media (min-width: 700px) {
-  .contact-grid {
-    grid-template-columns: 1fr 1.2fr;
-    gap: 4rem;
+.contact-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 2rem;
+  padding-top: 0.5rem;
+  border-top: var(--line) solid var(--border);
+}
+
+@media (min-width: 500px) {
+  .contact-info {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 .contact-item {
-  margin-bottom: 1.75rem;
+  margin-bottom: 0;
 }
 
 .contact-item h3 {
