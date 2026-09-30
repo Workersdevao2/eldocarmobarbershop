@@ -78,6 +78,9 @@ Push this folder to its own GitHub repo → Cloudflare Pages
 - Lubango CTA: full-bleed night landmark image + dark gradient; all text overlaid
 - Removed unused media (old gallery/product placeholders, unused Glamorize image)
 
+### 2026-09-30 — Agendar layout
+- Booking form first; all contact info (WhatsApp, localização, horário, redes) placed under the form
+
 ### Earlier
 - Services grid, experience video cards, booking form, footer / portal link
 - Contact & WhatsApp numbers wired for Luanda and Lubango
