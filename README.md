@@ -116,6 +116,17 @@ Also listed: 930 095 886 / 925 184 386 (barbershop secondary)
 
 > **Convention:** Every important update lists the exact files changed so you can download only those and push to GitHub.
 
+### 2026-09-30 — Mini-Bar header matches homepage
+
+Mini-Bar hero is full-bleed under the transparent header (white logo / cart / hamburger). On scroll → solid cream header, same as homepage.
+
+**Barbershop**
+- `barbershop/css/style.css`
+- `barbershop/README.md`
+
+**Root**
+- `README.md`
+
 ### 2026-09-29 — Experience carousel arrows
 
 Side prev/next arrows on “A Experiência Eldo Carmo” (Kylie-style), smooth scroll by card, disabled at ends.
