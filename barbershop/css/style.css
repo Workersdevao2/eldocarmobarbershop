@@ -1131,26 +1131,25 @@ body.menu-open {
   border-color: #fff;
 }
 
-/* Mini-Bar short full-bleed hero */
+/* Mini-Bar full-bleed hero — same header treatment as homepage */
 .minibar-hero {
   position: relative;
   width: 100%;
-  height: 220px;
+  height: 280px;
   overflow: hidden;
-  margin-top: 100px; /* announce bar + header */
+  margin-top: 0;
   background: #1a1a1a;
 }
 
 @media (min-width: 600px) {
   .minibar-hero {
-    height: 280px;
+    height: 340px;
   }
 }
 
 @media (min-width: 900px) {
   .minibar-hero {
-    height: 320px;
-    margin-top: 140px; /* taller header with nav */
+    height: 400px;
   }
 }
 
@@ -1170,13 +1169,20 @@ body.menu-open {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 1.5rem;
+  padding: 7rem 1.5rem 1.5rem; /* clear announce bar + header */
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.35) 0%,
-    rgba(0, 0, 0, 0.45) 100%
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.35) 50%,
+    rgba(0, 0, 0, 0.5) 100%
   );
   color: #fff;
+}
+
+@media (min-width: 900px) {
+  .minibar-hero__overlay {
+    padding-top: 9rem;
+  }
 }
 
 .minibar-hero__eyebrow {
