@@ -64,8 +64,7 @@ Push this folder to its own GitHub repo → Cloudflare Pages
 
 ### 2026-09-29 — Mini-Bar page
 - New `minibar.html` — full product grid + cart
-- Home: image-only teaser card — title overlay on top, transparent **Compre agora** button at bottom of image
-- No body text below the card
+- Home: section header (No espaço / Mini-Bar / intro) + image card with transparent **Compre agora** button at bottom of image only
 - Nav link: **Mini-Bar** → `minibar.html`
 - Cart shared via `localStorage` between both pages
 
