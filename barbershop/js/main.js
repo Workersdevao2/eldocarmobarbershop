@@ -341,9 +341,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const playBtn = card.querySelector('.experience-card__play');
     if (!video || !playBtn) return;
 
+    // Sound on by default when user plays
+    video.muted = false;
+    video.volume = 1;
+
     const toggle = () => {
       if (video.paused) {
-        // Pause others
         document.querySelectorAll('.experience-card__video').forEach((v) => {
           if (v !== video) {
             v.pause();
@@ -351,7 +354,15 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
         video.muted = false;
-        video.play().catch(() => {});
+        video.volume = 1;
+        const playPromise = video.play();
+        if (playPromise && typeof playPromise.then === 'function') {
+          playPromise.catch(() => {
+            // If autoplay policy blocks unmuted, retry once unmuted after gesture (already a click)
+            video.muted = false;
+            video.play().catch(() => {});
+          });
+        }
         card.classList.add('is-playing');
       } else {
         video.pause();
