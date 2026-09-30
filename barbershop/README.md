@@ -96,7 +96,8 @@ Push this folder to its own GitHub repo → Cloudflare Pages
 - Mobile: logo centered; hamburger left → solid left drawer (not transparent)
 - Text logo only (no image): **ELDO CARMO BARBERSHOP** / **JOHNNY BERRY** centered (Kylie-style)
 - **Portal** link in desktop nav + mobile drawer
-- Discovery: music logos + links
+- Discovery: music logos + links; desktop Discovery label white on transparent header
+- Experience: regenerated posters (reabertura/transformação); playback with sound on
 - Hero: no “Barber Shop · Luanda”; fixed ghost CTA
 - Hero media: mobile crop unchanged; desktop uses centered cover so portrait video/image fills the screen
 - Mini-Bar: full-bleed hero under transparent header (same style as homepage)
@@ -113,3 +114,8 @@ Push this folder to its own GitHub repo → Cloudflare Pages
 ### Earlier
 - Services grid, experience video cards, booking form, footer / portal link
 - Contact & WhatsApp numbers wired for Luanda and Lubango
+
+### 2026-09-30 — Fix Discovery dropdown hover gap
+- Dropdown no longer closes while moving the cursor onto a music link
+- Files: `barbershop/css/style.css`, `glamorize/css/style.css`
+
