@@ -81,8 +81,10 @@ Push this folder to its own GitHub repo → Cloudflare Pages
 ### 2026-09-30 — Header & menu
 - Top announcement bar: “Já disponível — Tá Queimar” → YouTube
 - Header transparent on hero, solid when scrolled (Kylie-style)
-- Menu opens from the **left** (drawer + overlay); hamburger on the left
-- Discovery section in menu: Johnny Berry — Tá Queimar with app logos (YouTube, Spotify, Apple Music, Deezer, YouTube Music) in `assets/icons/`
+- Desktop: horizontal nav in header (like Kylie); mobile: hamburger → left drawer
+- Logo: **Eldo Carmo Barbershop** + subtitle **Johnny Berry**
+- Discovery section: music logos + links
+- Hero: removed “Barber Shop · Luanda”; fixed ghost “Ver Serviços” button (transparent outline)
 
 ### 2026-09-30 — Agendar layout
 - Booking form first; all contact info (WhatsApp, localização, horário, redes) placed under the form
