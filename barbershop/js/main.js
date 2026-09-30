@@ -355,11 +355,18 @@ document.addEventListener('DOMContentLoaded', () => {
     updateNav();
   }
 
-  // ---------- Header scroll: transparent → solid ----------
+  // ---------- Header scroll: transparent → solid; announce bar only at top ----------
   const header = document.getElementById('header');
+  const announceBar = document.querySelector('.announce-bar');
   const onScrollHeader = () => {
-    if (!header) return;
-    header.classList.toggle('is-scrolled', window.scrollY > 40);
+    const y = window.scrollY;
+    if (header) {
+      header.classList.toggle('is-scrolled', y > 40);
+      header.classList.toggle('announce-hidden', y > 20);
+    }
+    if (announceBar) {
+      announceBar.classList.toggle('is-hidden', y > 20);
+    }
   };
   window.addEventListener('scroll', onScrollHeader, { passive: true });
   onScrollHeader();
