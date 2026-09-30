@@ -133,11 +133,52 @@ document.addEventListener('DOMContentLoaded', () => {
     cartDrawer.classList.remove('is-open');
     cartDrawer.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    const panel = cartDrawer.querySelector('.cart-drawer__panel');
+    if (panel) {
+      panel.style.transform = '';
+      panel.style.transition = '';
+    }
   }
 
   cartBtn?.addEventListener('click', openCart);
   cartClose?.addEventListener('click', closeCart);
   cartOverlay?.addEventListener('click', closeCart);
+
+  // Swipe right to close cart panel (mobile)
+  if (cartDrawer) {
+    const panel = cartDrawer.querySelector('.cart-drawer__panel');
+    let touchStartX = 0;
+    let touchCurrentX = 0;
+    let isDragging = false;
+
+    panel?.addEventListener('touchstart', (e) => {
+      touchStartX = e.touches[0].clientX;
+      touchCurrentX = touchStartX;
+      isDragging = true;
+      panel.style.transition = 'none';
+    }, { passive: true });
+
+    panel?.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      touchCurrentX = e.touches[0].clientX;
+      const deltaX = touchCurrentX - touchStartX;
+      if (deltaX > 0) {
+        panel.style.transform = `translateX(${deltaX}px)`;
+      }
+    }, { passive: true });
+
+    panel?.addEventListener('touchend', () => {
+      if (!isDragging) return;
+      isDragging = false;
+      panel.style.transition = '';
+      const deltaX = touchCurrentX - touchStartX;
+      if (deltaX > 80) {
+        closeCart();
+      } else {
+        panel.style.transform = '';
+      }
+    });
+  }
 
   // ---------- Cart Logic ----------
   function saveCart() {
@@ -309,7 +350,8 @@ document.addEventListener('DOMContentLoaded', () => {
             v.closest('.experience-card')?.classList.remove('is-playing');
           }
         });
-        video.play();
+        video.muted = false;
+        video.play().catch(() => {});
         card.classList.add('is-playing');
       } else {
         video.pause();
