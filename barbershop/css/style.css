@@ -146,12 +146,24 @@ ul {
   letter-spacing: 0.04em;
   text-align: center;
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.announce-bar.is-hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .announce-bar:hover {
   opacity: 0.9;
   color: #fff;
+}
+
+.announce-bar.is-hidden:hover {
+  opacity: 0;
 }
 
 .announce-bar strong {
@@ -168,7 +180,11 @@ ul {
   z-index: 100;
   background: transparent;
   border-bottom: var(--line) solid transparent;
-  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, top 0.3s ease;
+}
+
+.header.announce-hidden {
+  top: 0;
 }
 
 .header.is-scrolled {
