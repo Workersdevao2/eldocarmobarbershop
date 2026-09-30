@@ -279,10 +279,13 @@ ul {
   padding: 0.55rem 0.15rem;
   margin: -0.55rem 0;
   font: inherit;
-  letter-spacing: inherit;
-  text-transform: inherit;
-  color: inherit;
+  font-size: 0.72rem;
+  font-weight: var(--font-regular);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
   line-height: inherit;
+  transition: color 0.2s ease;
 }
 
 .header__discover-dropdown {
