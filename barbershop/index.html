@@ -11,23 +11,25 @@
   <link rel="icon" href="assets/images/eldocarmologo.webp" type="image/webp">
 </head>
 <body>
+  <!-- ========== ANNOUNCEMENT BAR ========== -->
+  <a class="announce-bar" href="https://youtu.be/6vzUPh26JZA?si=xl3FzxXKTsRD6NoC" target="_blank" rel="noopener">
+    Já disponível — música <strong>Tá Queimar</strong> 🔥🔥🔥 · Ouvir no YouTube
+  </a>
+
   <!-- ========== HEADER ========== -->
   <header class="header" id="header">
     <div class="container header__inner">
-      <a href="index.html" class="header__logo">
-        <img src="assets/images/eldocarmologo.webp" alt="Eldo Carmo Barber Shop" width="48" height="48">
-        <span>Eldo Carmo</span>
-      </a>
-
-      <nav class="nav" id="nav" aria-label="Menu principal">
-        <ul class="nav__list">
-          <li><a href="#servicos" class="nav__link">Serviços</a></li>
-          <li><a href="minibar.html" class="nav__link">Mini-Bar</a></li>
-          <li><a href="#galeria" class="nav__link">Galeria</a></li>
-          <li><a href="#lubango" class="nav__link">Lubango</a></li>
-          <li><a href="#agendar" class="nav__link">Agendar</a></li>
-        </ul>
-      </nav>
+      <div class="header__left">
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+        <a href="index.html" class="header__logo">
+          <img src="assets/images/eldocarmologo.webp" alt="Eldo Carmo Barber Shop" width="48" height="48">
+          <span>Eldo Carmo</span>
+        </a>
+      </div>
 
       <div class="header__actions">
         <button class="cart-btn" id="cart-btn" aria-label="Carrinho">
@@ -38,15 +40,70 @@
           </svg>
           <span class="cart-btn__count" id="cart-count">0</span>
         </button>
-
-        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
-          <span class="hamburger__line"></span>
-          <span class="hamburger__line"></span>
-          <span class="hamburger__line"></span>
-        </button>
       </div>
     </div>
   </header>
+
+  <!-- ========== LEFT MENU DRAWER ========== -->
+  <div class="menu-drawer" id="menu-drawer" aria-hidden="true">
+    <div class="menu-drawer__overlay" id="menu-overlay"></div>
+    <aside class="menu-drawer__panel" role="dialog" aria-label="Menu">
+      <div class="menu-drawer__head">
+        <span class="menu-drawer__brand">Eldo Carmo</span>
+        <button class="menu-drawer__close" id="menu-close" aria-label="Fechar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="menu-drawer__nav" aria-label="Menu principal">
+        <a href="#servicos" class="menu-drawer__link">Serviços</a>
+        <a href="minibar.html" class="menu-drawer__link">Mini-Bar</a>
+        <a href="#galeria" class="menu-drawer__link">Galeria</a>
+        <a href="#lubango" class="menu-drawer__link">Lubango</a>
+        <a href="#agendar" class="menu-drawer__link">Agendar</a>
+      </nav>
+
+      <div class="menu-drawer__discover">
+        <p class="menu-drawer__discover-title">Discovery</p>
+        <p class="menu-drawer__discover-sub">Johnny Berry — Tá Queimar</p>
+        <ul class="menu-drawer__music">
+          <li>
+            <a href="https://youtu.be/6vzUPh26JZA?si=xl3FzxXKTsRD6NoC" target="_blank" rel="noopener">
+              <img src="assets/icons/youtube.webp" alt="" width="88" height="28">
+              <span>YouTube</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://open.spotify.com/album/7LO9kumBSe1za71O5oKOjZ?si=1&nd=1&dlsi=8021751f937340e2" target="_blank" rel="noopener">
+              <img src="assets/icons/spotify.webp" alt="" width="88" height="28">
+              <span>Spotify</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://music.apple.com/us/album/t%C3%A1-queimar-feat-young-k-varox-007-single/6788576000" target="_blank" rel="noopener">
+              <img src="assets/icons/apple-music.webp" alt="" width="28" height="28">
+              <span>Apple Music</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.deezer.com/us/album/1023440431" target="_blank" rel="noopener">
+              <img src="assets/icons/deezer.webp" alt="" width="88" height="28">
+              <span>Deezer</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/results?search_query=Johnny+Berry+T%C3%A1+Queimar" target="_blank" rel="noopener">
+              <img src="assets/icons/youtube-music.webp" alt="" width="100" height="28">
+              <span>YouTube Music</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+  </div>
 
   <!-- ========== HERO ========== -->
   <section class="hero" id="hero">

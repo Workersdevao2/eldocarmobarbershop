@@ -78,6 +78,12 @@ Push this folder to its own GitHub repo → Cloudflare Pages
 - Lubango CTA: full-bleed night landmark image + dark gradient; all text overlaid
 - Removed unused media (old gallery/product placeholders, unused Glamorize image)
 
+### 2026-09-30 — Header & menu
+- Top announcement bar: “Já disponível — Tá Queimar” → YouTube
+- Header transparent on hero, solid when scrolled (Kylie-style)
+- Menu opens from the **left** (drawer + overlay); hamburger on the left
+- Discovery section in menu: Johnny Berry — Tá Queimar with app logos (YouTube, Spotify, Apple Music, Deezer, YouTube Music) in `assets/icons/`
+
 ### 2026-09-30 — Agendar layout
 - Booking form first; all contact info (WhatsApp, localização, horário, redes) placed under the form
 
