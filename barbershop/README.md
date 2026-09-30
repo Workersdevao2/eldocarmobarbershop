@@ -83,12 +83,14 @@ Push this folder to its own GitHub repo → Cloudflare Pages
 - Header transparent on hero, solid when scrolled (Kylie-style)
 - Desktop: logo centered **above** horizontal nav (Kylie-style)
 - Mobile: logo centered; hamburger left → solid left drawer (not transparent)
-- Logo: **Eldo Carmo Barbershop** + **Johnny Berry**
+- Text logo only (no image): **ELDO CARMO BARBERSHOP** / **JOHNNY BERRY** centered (Kylie-style)
+- **Portal** link in desktop nav + mobile drawer
 - Discovery: music logos + links
 - Hero: no “Barber Shop · Luanda”; fixed ghost CTA
 
 ### 2026-09-30 — Agendar layout
-- Booking form first; all contact info (WhatsApp, localização, horário, redes) placed under the form
+- Booking form first; contact info stacked under form
+- Instagram / Facebook as SVG icon buttons
 
 ### Earlier
 - Services grid, experience video cards, booking form, footer / portal link
