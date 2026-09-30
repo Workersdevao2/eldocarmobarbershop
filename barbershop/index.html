@@ -46,8 +46,47 @@
       <a href="index.html" class="header__nav-link">Início</a>
       <a href="#servicos" class="header__nav-link">Serviços</a>
       <a href="minibar.html" class="header__nav-link">Mini-Bar</a>
-      <a href="#lubango" class="header__nav-link">Lubango</a>
       <a href="#agendar" class="header__nav-link">Agendar</a>
+      <div class="header__nav-item header__nav-item--discover">
+        <button type="button" class="header__nav-link header__nav-discover-trigger" aria-expanded="false" aria-haspopup="true">
+          Discovery
+        </button>
+        <div class="header__discover-dropdown" role="menu">
+          <p class="header__discover-label">Johnny Berry — Tá Queimar</p>
+          <ul class="header__discover-music">
+            <li>
+              <a href="https://youtu.be/6vzUPh26JZA?si=xl3FzxXKTsRD6NoC" target="_blank" rel="noopener" role="menuitem">
+                <img src="assets/icons/youtube.webp" alt="" width="88" height="28">
+                <span>YouTube</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://open.spotify.com/album/7LO9kumBSe1za71O5oKOjZ?si=1&nd=1&dlsi=8021751f937340e2" target="_blank" rel="noopener" role="menuitem">
+                <img src="assets/icons/spotify.webp" alt="" width="88" height="28">
+                <span>Spotify</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://music.apple.com/us/album/t%C3%A1-queimar-feat-young-k-varox-007-single/6788576000" target="_blank" rel="noopener" role="menuitem">
+                <img src="assets/icons/apple-music.webp" alt="" width="28" height="28">
+                <span>Apple Music</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.deezer.com/us/album/1023440431" target="_blank" rel="noopener" role="menuitem">
+                <img src="assets/icons/deezer.webp" alt="" width="88" height="28">
+                <span>Deezer</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/results?search_query=Johnny+Berry+T%C3%A1+Queimar" target="_blank" rel="noopener" role="menuitem">
+                <img src="assets/icons/youtube-music.webp" alt="" width="100" height="28">
+                <span>YouTube Music</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
       <a href="https://eldocarmo.workersdevao.workers.dev" class="header__nav-link" target="_blank" rel="noopener">Portal</a>
     </nav>
   </header>
@@ -70,7 +109,6 @@
         <a href="index.html" class="menu-drawer__link">Início</a>
         <a href="#servicos" class="menu-drawer__link">Serviços</a>
         <a href="minibar.html" class="menu-drawer__link">Mini-Bar</a>
-        <a href="#lubango" class="menu-drawer__link">Lubango</a>
         <a href="#agendar" class="menu-drawer__link">Agendar</a>
         <a href="https://eldocarmo.workersdevao.workers.dev" class="menu-drawer__link" target="_blank" rel="noopener">Portal</a>
       </nav>
@@ -245,7 +283,7 @@
 
       <div class="experience-track" id="experience-track">
         <article class="experience-card">
-          <video class="experience-card__video" poster="assets/videos/poster-ambiente.webp" muted playsinline preload="metadata">
+          <video class="experience-card__video" poster="assets/videos/poster-ambiente.webp" playsinline preload="metadata">
             <source src="assets/videos/exp-ambiente.mp4" type="video/mp4">
           </video>
           <div class="experience-card__overlay">
@@ -257,7 +295,19 @@
         </article>
 
         <article class="experience-card">
-          <video class="experience-card__video" poster="assets/videos/poster-corte.webp" muted playsinline preload="metadata">
+          <video class="experience-card__video" poster="assets/videos/poster-reabertura.webp" playsinline preload="metadata">
+            <source src="assets/videos/exp-reabertura.mp4" type="video/mp4">
+          </video>
+          <div class="experience-card__overlay">
+            <button type="button" class="experience-card__play" aria-label="Reproduzir">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <p class="experience-card__label">Reabertura</p>
+          </div>
+        </article>
+
+        <article class="experience-card">
+          <video class="experience-card__video" poster="assets/videos/poster-corte.webp" playsinline preload="metadata">
             <source src="assets/videos/exp-corte.mp4" type="video/mp4">
           </video>
           <div class="experience-card__overlay">
@@ -269,7 +319,19 @@
         </article>
 
         <article class="experience-card">
-          <video class="experience-card__video" poster="assets/videos/poster-detalhe.webp" muted playsinline preload="metadata">
+          <video class="experience-card__video" poster="assets/videos/poster-transformacao.webp" playsinline preload="metadata">
+            <source src="assets/videos/exp-transformacao.mp4" type="video/mp4">
+          </video>
+          <div class="experience-card__overlay">
+            <button type="button" class="experience-card__play" aria-label="Reproduzir">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <p class="experience-card__label">Transformação</p>
+          </div>
+        </article>
+
+        <article class="experience-card">
+          <video class="experience-card__video" poster="assets/videos/poster-detalhe.webp" playsinline preload="metadata">
             <source src="assets/videos/exp-detalhe.mp4" type="video/mp4">
           </video>
           <div class="experience-card__overlay">
@@ -281,7 +343,19 @@
         </article>
 
         <article class="experience-card">
-          <video class="experience-card__video" poster="assets/videos/poster-barba.webp" muted playsinline preload="metadata">
+          <video class="experience-card__video" poster="assets/videos/poster-luxo.webp" playsinline preload="metadata">
+            <source src="assets/videos/exp-luxo.mp4" type="video/mp4">
+          </video>
+          <div class="experience-card__overlay">
+            <button type="button" class="experience-card__play" aria-label="Reproduzir">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <p class="experience-card__label">Experiência</p>
+          </div>
+        </article>
+
+        <article class="experience-card">
+          <video class="experience-card__video" poster="assets/videos/poster-barba.webp" playsinline preload="metadata">
             <source src="assets/videos/exp-barba.mp4" type="video/mp4">
           </video>
           <div class="experience-card__overlay">
@@ -361,36 +435,34 @@
 
   <!-- ========== LUBANGO ========== -->
   <section class="section section--lubango" id="lubango">
-    <div class="container">
-      <div class="lubango-hero">
-        <img class="lubango-hero__img" src="assets/images/lubango.webp" alt="Letras LUBANGO iluminadas — marco da cidade" loading="lazy">
-        <div class="lubango-hero__gradient"></div>
-        <div class="lubango-hero__content">
-          <p class="lubango-hero__eyebrow">Expansão</p>
-          <h2 class="lubango-hero__title">Lubango — Estamos a chegar</h2>
-          <p class="lubango-hero__text">A Eldo Carmo está a reforçar a sua equipa no Lubango e quer contar contigo.</p>
+    <div class="lubango-hero">
+      <img class="lubango-hero__img" src="assets/images/lubango.webp" alt="Letras LUBANGO iluminadas — marco da cidade" loading="lazy">
+      <div class="lubango-hero__gradient"></div>
+      <div class="lubango-hero__content">
+        <p class="lubango-hero__eyebrow">Expansão</p>
+        <h2 class="lubango-hero__title">Lubango — Estamos a chegar</h2>
+        <p class="lubango-hero__text">A Eldo Carmo está a reforçar a sua equipa no Lubango e quer contar contigo.</p>
 
-          <div class="lubango-roles">
-            <span>Barbeiros</span>
-            <span>Barmans</span>
-            <span>Técnicos de Unhas</span>
-            <span>Atendimento ao Público</span>
-          </div>
-
-          <p class="lubango-location">
-            <strong>Local:</strong> Bairro Lucrécia, Rua da Alma<br>
-            (antigo Emolube / Impolube) · Lubango
-          </p>
-
-          <p class="lubango-contact">
-            <strong>Candidaturas:</strong> recrutamento.eldocarmo@gmail.com<br>
-            <strong>WhatsApp:</strong> 924 071 971
-          </p>
-
-          <a href="https://wa.me/244924071971?text=Olá! Tenho interesse em candidatar-me para a equipa Eldo Carmo no Lubango." class="btn btn--primary" target="_blank" rel="noopener">
-            Candidatar-me
-          </a>
+        <div class="lubango-roles">
+          <span>Barbeiros</span>
+          <span>Barmans</span>
+          <span>Técnicos de Unhas</span>
+          <span>Atendimento ao Público</span>
         </div>
+
+        <p class="lubango-location">
+          <strong>Local:</strong> Bairro Lucrécia, Rua da Alma<br>
+          (antigo Emolube / Impolube) · Lubango
+        </p>
+
+        <p class="lubango-contact">
+          <strong>Candidaturas:</strong> recrutamento.eldocarmo@gmail.com<br>
+          <strong>WhatsApp:</strong> 924 071 971
+        </p>
+
+        <a href="https://wa.me/244924071971?text=Olá! Tenho interesse em candidatar-me para a equipa Eldo Carmo no Lubango." class="btn btn--primary" target="_blank" rel="noopener">
+          Candidatar-me
+        </a>
       </div>
     </div>
   </section>

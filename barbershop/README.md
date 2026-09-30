@@ -1,5 +1,16 @@
 # Eldo Carmo Barber Shop — eldocarmobarbershop.com
 
+### 2026-09-30 — Desktop Discovery nav (music apps on hover)
+- Added **Discovery** item to desktop nav on ECB + ECG
+- On hover / focus: dropdown with YouTube, Spotify, Apple Music, Deezer, YouTube Music (same links as mobile drawer)
+- Files changed:
+  - `barbershop/index.html`
+  - `barbershop/minibar.html`
+  - `barbershop/css/style.css`
+  - `glamorize/index.html`
+  - `glamorize/css/style.css`
+
+
 Static single-page (plus Mini-Bar page) for Eldo Carmo Barber Shop, Luanda / Lubango.  
 No build step — pure HTML / CSS / JS for Cloudflare Pages.
 
