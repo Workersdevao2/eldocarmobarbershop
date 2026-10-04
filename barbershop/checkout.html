@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Eldo Carmo Mini-Bar — Snacks, cocktails e bebidas. Chocolate Scookiie, refrigerantes e mais no V17, Luanda.">
-  <title>Eldo Carmo Mini-Bar | Snacks, Cocktails &amp; Bebidas</title>
+  <meta name="description" content="Checkout — Eldo Carmo Mini-Bar. Confirme o seu pedido e envie via WhatsApp.">
+  <title>Checkout | Eldo Carmo Mini-Bar</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="assets/images/eldocarmologo.webp" type="image/webp">
 </head>
@@ -13,7 +13,7 @@
     Já disponível — música <strong>Tá Queimar</strong> 🔥🔥🔥 · Ouvir no YouTube
   </a>
 
-  <header class="header" id="header">
+  <header class="header header--solid" id="header">
     <div class="container header__inner">
       <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" type="button">
         <span class="hamburger__line"></span>
@@ -150,92 +150,69 @@
   </div>
 
   <main>
-    <section class="minibar-hero" aria-label="Eldo Carmo Mini-Bar">
-      <img class="minibar-hero__img" src="assets/images/minibar-hero.webp" alt="Chocolate Scookiie — Menta, Ginguba e Ao Leite">
-      <div class="minibar-hero__overlay">
-        <p class="minibar-hero__eyebrow">Eldo Carmo</p>
-        <h1 class="minibar-hero__title">Mini-Bar</h1>
-        <p class="minibar-hero__text">Snacks, cocktails e bebidas</p>
-      </div>
-    </section>
-
-    <section class="section minibar-page">
+    <section class="section checkout-page">
       <div class="container">
-        <div class="products-grid" id="products-grid">
-          <article class="product-card" data-id="scookiie-menta" data-name="Chocolate Scookiie — Menta" data-price="1500">
-            <div class="product-card__image">
-              <img src="assets/products/scookiie-menta.webp" alt="Chocolate Scookiie Menta" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">Scookiie Menta</h3>
-              <p class="product-card__meta">80g · 50% cacau</p>
-              <p class="product-card__price">1.500 Kz</p>
-              <button class="btn btn--small add-to-cart">Adicionar</button>
-            </div>
-          </article>
+        <header class="section__header checkout-page__header">
+          <p class="section__eyebrow">Mini-Bar</p>
+          <h1 class="section__title">Checkout</h1>
+          <div class="section__line"></div>
+          <p class="section__intro">Confirme o pedido e os seus dados. A encomenda será enviada por WhatsApp.</p>
+        </header>
 
-          <article class="product-card" data-id="scookiie-ginguba" data-name="Chocolate Scookiie — Ginguba" data-price="1500">
-            <div class="product-card__image">
-              <img src="assets/products/scookiie-ginguba.webp" alt="Chocolate Scookiie Ginguba" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">Scookiie Ginguba</h3>
-              <p class="product-card__meta">80g · 50% cacau</p>
-              <p class="product-card__price">1.500 Kz</p>
-              <button class="btn btn--small add-to-cart">Adicionar</button>
-            </div>
-          </article>
-
-          <article class="product-card" data-id="scookiie-leite" data-name="Chocolate Scookiie — Ao Leite" data-price="1500">
-            <div class="product-card__image">
-              <img src="assets/products/scookiie-aoleite.webp" alt="Chocolate Scookiie Ao Leite" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">Scookiie Ao Leite</h3>
-              <p class="product-card__meta">80g · 50% cacau</p>
-              <p class="product-card__price">1.500 Kz</p>
-              <button class="btn btn--small add-to-cart">Adicionar</button>
-            </div>
-          </article>
-
-          <article class="product-card" data-id="agua-pura" data-name="Água Pura 330ml" data-price="500">
-            <div class="product-card__image">
-              <img src="assets/products/agua-pura.webp" alt="Água Pura 330ml" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">Água Pura</h3>
-              <p class="product-card__meta">330ml</p>
-              <p class="product-card__price">500 Kz</p>
-              <button class="btn btn--small add-to-cart">Adicionar</button>
-            </div>
-          </article>
-
-          <article class="product-card" data-id="coca-cola" data-name="Coca-Cola 350ml" data-price="700">
-            <div class="product-card__image">
-              <img src="assets/products/coca-cola.webp" alt="Coca-Cola 350ml" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">Coca-Cola</h3>
-              <p class="product-card__meta">350ml</p>
-              <p class="product-card__price">700 Kz</p>
-              <button class="btn btn--small add-to-cart">Adicionar</button>
-            </div>
-          </article>
-
-          <article class="product-card" data-id="cuca" data-name="Cuca Cerveja 330ml" data-price="800">
-            <div class="product-card__image">
-              <img src="assets/products/cuca.webp" alt="Cuca Cerveja 330ml" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">Cuca</h3>
-              <p class="product-card__meta">330ml · Cerveja</p>
-              <p class="product-card__price">800 Kz</p>
-              <button class="btn btn--small add-to-cart">Adicionar</button>
-            </div>
-          </article>
+        <!-- Empty state -->
+        <div class="checkout-empty" id="checkout-empty" hidden>
+          <p>O carrinho está vazio.</p>
+          <a href="minibar.html" class="btn btn--primary">Ver Mini-Bar</a>
         </div>
 
-        <p class="minibar-note">Cocktails preparados no espaço · Fale com o barman/bartender no V17.</p>
+        <div class="checkout-layout" id="checkout-layout">
+          <!-- Order summary -->
+          <div class="checkout-summary">
+            <h2 class="checkout-summary__title">O seu pedido</h2>
+            <div class="checkout-items" id="checkout-items">
+              <!-- filled by JS -->
+            </div>
+            <div class="checkout-summary__total">
+              <span>Total</span>
+              <strong id="checkout-total">0 Kz</strong>
+            </div>
+            <a href="minibar.html" class="checkout-summary__back">← Continuar a comprar</a>
+          </div>
+
+          <!-- Customer form -->
+          <form class="checkout-form contact-form" id="checkout-form" novalidate>
+            <h2 class="checkout-form__title">Os seus dados</h2>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="co-name">Nome *</label>
+                <input type="text" id="co-name" name="name" required autocomplete="name" placeholder="O seu nome">
+              </div>
+              <div class="form-group">
+                <label for="co-phone">Telefone / WhatsApp *</label>
+                <input type="tel" id="co-phone" name="phone" required autocomplete="tel" placeholder="9XX XXX XXX" inputmode="tel">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="co-pickup">Entrega / levantamento</label>
+              <select id="co-pickup" name="pickup">
+                <option value="levantamento">Levantamento no V17 (Kilamba)</option>
+                <option value="entrega">Entrega (combinar no WhatsApp)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="co-notes">Notas <span class="optional">(opcional)</span></label>
+              <textarea id="co-notes" name="notes" rows="3" placeholder="Ex.: hora de levantamento, preferências…"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full" id="checkout-submit">
+              Encomendar via WhatsApp
+            </button>
+            <p class="checkout-form__hint">Será aberta uma conversa no WhatsApp com o pedido pré-preenchido.</p>
+          </form>
+        </div>
       </div>
     </section>
   </main>
@@ -253,22 +230,8 @@
         <span class="footer__sep">·</span>
         <span>Seg – Dom · 07:00 – 22:00</span>
       </div>
-      <div class="footer__social">
-        <a href="https://www.instagram.com/eldo_carmo/" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="2" y="2" width="20" height="20" rx="5"/>
-            <circle cx="12" cy="12" r="4"/>
-            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-          </svg>
-        </a>
-        <a href="https://www.facebook.com/EldoCarmoBeleza" target="_blank" rel="noopener" aria-label="Facebook">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/>
-          </svg>
-        </a>
-      </div>
       <p class="footer__copy">© 2026 Eldo Carmo. Todos os direitos reservados.</p>
-      <a href="index.html" class="footer__link">← Barber Shop</a>
+      <a href="minibar.html" class="footer__link">← Mini-Bar</a>
     </div>
   </footer>
 
@@ -292,13 +255,12 @@
           <span>Total</span>
           <strong id="cart-total">0 Kz</strong>
         </div>
-        <a class="btn btn--primary btn--full is-disabled" id="checkout-btn" href="checkout.html" aria-disabled="true">
+        <a class="btn btn--primary btn--full" id="checkout-btn" href="checkout.html" aria-disabled="true">
           Finalizar pedido
         </a>
         <button type="button" class="btn btn--ghost btn--full cart-clear" id="cart-clear" disabled>
           Limpar carrinho
         </button>
-
       </footer>
     </div>
   </div>

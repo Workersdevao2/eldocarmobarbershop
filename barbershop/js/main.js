@@ -221,13 +221,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function renderCart() {
+    if (!cartCountEl || !cartTotalEl || !cartItemsEl) return;
+
     const total = getTotal();
     const count = cart.reduce((sum, item) => sum + item.qty, 0);
     const empty = cart.length === 0;
 
     cartCountEl.textContent = count;
     cartTotalEl.textContent = formatPrice(total);
-    checkoutBtn.disabled = empty;
+
+    if (checkoutBtn) {
+      if (checkoutBtn.tagName === 'A') {
+        checkoutBtn.setAttribute('aria-disabled', empty ? 'true' : 'false');
+        checkoutBtn.classList.toggle('is-disabled', empty);
+      } else {
+        checkoutBtn.disabled = empty;
+      }
+    }
     if (cartClearBtn) cartClearBtn.disabled = empty;
 
     if (empty) {
@@ -275,23 +285,138 @@ document.addEventListener('DOMContentLoaded', () => {
     clearCart();
   });
 
-  // Checkout → WhatsApp
-  checkoutBtn?.addEventListener('click', () => {
+  // Cart drawer CTA → checkout page (prevent if empty)
+  if (checkoutBtn) {
+    const isLink = checkoutBtn.tagName === 'A';
+    if (isLink) {
+      checkoutBtn.addEventListener('click', (e) => {
+        if (cart.length === 0) {
+          e.preventDefault();
+          return;
+        }
+      });
+    } else {
+      checkoutBtn.addEventListener('click', () => {
+        if (cart.length === 0) return;
+        window.location.href = 'checkout.html';
+      });
+    }
+  }
+
+  // Initial render
+  renderCart();
+
+  // ---------- Checkout page ----------
+  const PRODUCT_IMAGES = {
+    'scookiie-menta': 'assets/products/scookiie-menta.webp',
+    'scookiie-ginguba': 'assets/products/scookiie-ginguba.webp',
+    'scookiie-leite': 'assets/products/scookiie-aoleite.webp',
+    'agua-pura': 'assets/products/agua-pura.webp',
+    'coca-cola': 'assets/products/coca-cola.webp',
+    cuca: 'assets/products/cuca.webp',
+  };
+
+  const checkoutItemsEl = document.getElementById('checkout-items');
+  const checkoutTotalEl = document.getElementById('checkout-total');
+  const checkoutEmptyEl = document.getElementById('checkout-empty');
+  const checkoutLayoutEl = document.getElementById('checkout-layout');
+  const checkoutForm = document.getElementById('checkout-form');
+
+  function renderCheckoutPage() {
+    if (!checkoutItemsEl) return;
+
+    const empty = cart.length === 0;
+
+    if (checkoutEmptyEl) checkoutEmptyEl.hidden = !empty;
+    if (checkoutLayoutEl) checkoutLayoutEl.hidden = empty;
+
+    if (empty) {
+      if (checkoutTotalEl) checkoutTotalEl.textContent = formatPrice(0);
+      checkoutItemsEl.innerHTML = '';
+      return;
+    }
+
+    if (checkoutTotalEl) checkoutTotalEl.textContent = formatPrice(getTotal());
+
+    checkoutItemsEl.innerHTML = cart
+      .map((item) => {
+        const img = PRODUCT_IMAGES[item.id] || 'assets/images/eldocarmologo.webp';
+        return `
+      <div class="checkout-item" data-id="${item.id}">
+        <div class="checkout-item__image">
+          <img src="${img}" alt="" loading="lazy">
+        </div>
+        <div class="checkout-item__info">
+          <h3 class="checkout-item__name">${item.name}</h3>
+          <p class="checkout-item__unit">${formatPrice(item.price)} / un.</p>
+          <div class="checkout-item__row">
+            <div class="cart-item__qty">
+              <button type="button" class="cart-item__qty-btn checkout-qty-btn" data-id="${item.id}" data-delta="-1" aria-label="Diminuir">−</button>
+              <span class="cart-item__qty-val">${item.qty}</span>
+              <button type="button" class="cart-item__qty-btn checkout-qty-btn" data-id="${item.id}" data-delta="1" aria-label="Aumentar">+</button>
+            </div>
+            <p class="checkout-item__line">${formatPrice(item.price * item.qty)}</p>
+          </div>
+        </div>
+      </div>`;
+      })
+      .join('');
+
+    checkoutItemsEl.querySelectorAll('.checkout-qty-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        changeQty(btn.dataset.id, Number(btn.dataset.delta));
+        renderCheckoutPage();
+      });
+    });
+  }
+
+  renderCheckoutPage();
+
+  // Keep checkout summary in sync when qty changes in the cart drawer
+  if (checkoutItemsEl && cartItemsEl) {
+    cartItemsEl.addEventListener('click', (e) => {
+      if (e.target.closest('.cart-item__qty-btn')) {
+        setTimeout(renderCheckoutPage, 0);
+      }
+    });
+  }
+
+  checkoutForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
     if (cart.length === 0) return;
+
+    const name = document.getElementById('co-name')?.value.trim() || '';
+    const phone = document.getElementById('co-phone')?.value.trim() || '';
+    const pickup = document.getElementById('co-pickup')?.value || 'levantamento';
+    const notes = document.getElementById('co-notes')?.value.trim() || '';
+
+    if (!name || !phone) {
+      if (!name) document.getElementById('co-name')?.focus();
+      else document.getElementById('co-phone')?.focus();
+      return;
+    }
+
+    const pickupLabel =
+      pickup === 'entrega' ? 'Entrega (combinar no WhatsApp)' : 'Levantamento no V17 (Kilamba)';
 
     const lines = cart.map(
       (item) => `• ${item.name} × ${item.qty} — ${formatPrice(item.price * item.qty)}`
     );
     const total = formatPrice(getTotal());
-    const message = encodeURIComponent(
-      `Olá! Gostaria de encomendar os seguintes produtos da Eldo Carmo Barber Shop:\n\n${lines.join('\n')}\n\nTotal: ${total}\n\nObrigado!`
-    );
 
-    window.open(`https://wa.me/244923929074?text=${message}`, '_blank');
+    let message =
+      `Olá! Gostaria de encomendar os seguintes produtos da Eldo Carmo Mini-Bar:\n\n` +
+      `${lines.join('\n')}\n\n` +
+      `Total: ${total}\n\n` +
+      `Nome: ${name}\n` +
+      `Telefone: ${phone}\n` +
+      `Entrega: ${pickupLabel}`;
+
+    if (notes) message += `\nNotas: ${notes}`;
+    message += `\n\nObrigado!`;
+
+    window.open(`https://wa.me/244923929074?text=${encodeURIComponent(message)}`, '_blank');
   });
-
-  // Initial render
-  renderCart();
 
   // ---------- Service card → pre-fill booking ----------
   document.querySelectorAll('.agendar-btn').forEach((btn) => {

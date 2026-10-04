@@ -22,6 +22,7 @@ No build step — pure HTML / CSS / JS for Cloudflare Pages.
 |------|---------|
 | `index.html` | Main site: hero, services, experience, Mini-Bar teaser, gallery, Lubango CTA, booking |
 | `minibar.html` | **Eldo Carmo Mini-Bar** — full product catalog (snacks, cocktails & beverages) |
+| `checkout.html` | **Checkout** — order summary + customer details → WhatsApp |
 
 ---
 
@@ -29,10 +30,11 @@ No build step — pure HTML / CSS / JS for Cloudflare Pages.
 
 - **Hero sequence** — still photo (5s) → video 1 (full) → video 2 (full) → loop  
   Dots at bottom indicate 3 slides; clickable to jump
-- **Client-side cart** (`localStorage`) shared across `index.html` and `minibar.html`
+- **Client-side cart** (`localStorage`) shared across `index.html`, `minibar.html`, `checkout.html`
   - Quantity **+ / −**
   - **Limpar carrinho**
-  - **Encomendar via WhatsApp** (pre-filled message → +244 923 929 074)
+  - **Finalizar pedido** → `checkout.html` → WhatsApp (pre-filled → +244 923 929 074)
+- **Checkout** — product images, qty controls, name / phone / pickup / notes
 - **Mini-Bar** — separate page; home shows one clickable lifestyle card (Scookiie)
 - **Booking form** → WhatsApp
 - **Lubango recruitment** CTA → +244 924 071 971
@@ -46,14 +48,18 @@ No build step — pure HTML / CSS / JS for Cloudflare Pages.
 barbershop/
 ├── index.html
 ├── minibar.html
+├── checkout.html
 ├── css/style.css
-├── js/main.js          # hamburger, hero sequence, cart, forms
+├── js/main.js          # hamburger, hero sequence, cart, checkout, forms
 ├── assets/
-│   ├── images/         # logo, hero, gallery, services, lubango, minibar-card
-│   ├── products/       # Scookiie ×3, Água, Coca-Cola, Cuca
-│   └── videos/         # hero.mp4, hero-2.mp4, experience clips + posters
+│   ├── icons/          # music platforms (YouTube, Spotify, Apple, Deezer, YT Music)
+│   ├── images/         # logo, hero still, gallery-01…07, services, lubango, minibar
+│   ├── products/       # Scookiie ×3, Água Pura, Coca-Cola, Cuca
+│   └── videos/         # hero.mp4, hero-2.mp4*, experience clips + posters
 └── README.md
 ```
+
+> **\*** `hero-2.mp4` is required by the hero sequence (slide 3). Upload it manually to GitHub if it is not in this folder (content-moderation / large-file cases).
 
 ---
 
@@ -65,6 +71,28 @@ Push this folder to its own GitHub repo → Cloudflare Pages
 ---
 
 ## Changelog (important)
+
+### 2026-10-05 — Checkout page
+- New `checkout.html` — order summary with product images + qty controls
+- Customer form: name, phone, pickup/delivery, notes
+- Cart drawer CTA **Finalizar pedido** → `checkout.html` (was direct WhatsApp)
+- Submit opens WhatsApp with full order + customer data pre-filled
+- Files: `checkout.html`, `css/style.css`, `js/main.js`, `index.html`, `minibar.html`
+
+### 2026-10-05 — Checkout page
+- New `checkout.html` — order summary with product images + qty controls
+- Customer form: name, phone, pickup/delivery, notes
+- Cart drawer CTA **Finalizar pedido** → `checkout.html` (was direct WhatsApp)
+- Submit opens WhatsApp with full order + customer data pre-filled
+- Files: `checkout.html`, `css/style.css`, `js/main.js`, `index.html`, `minibar.html`
+
+### 2026-10-05 — Asset cleanup
+- Removed unused images not referenced in HTML/CSS/JS:
+  - cuts-*.webp (5), exterior-*.webp (2), interior-*.webp (5), owner-suit.webp
+  - chocolate-closeup / chocolate-display / chocolate-ginguba.webp
+- Gallery remains `gallery-01` … `gallery-07` only
+- Products remain Scookiie ×3 + Água + Coca-Cola + Cuca
+- **Note:** `assets/videos/hero-2.mp4` must be uploaded manually to the repo (not present in this working copy)
 
 ### 2026-09-29 — Hero media
 - Added `hero.webp` (Johnny + mural) as opening still

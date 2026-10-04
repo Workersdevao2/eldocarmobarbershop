@@ -104,10 +104,11 @@ Also listed: 930 095 886 / 925 184 386 (barbershop secondary)
 - [x] Client-side cart with localStorage
 - [x] Hours added to both brand sites
 - [ ] Real service prices (placeholders currently used — awaiting client confirmation)
-- [x] Gallery enriched with real exterior + interior frames (facade, murals, chairs, lounge, owner)
-- [x] Barbershop gallery expanded with real client cuts (kids, braids, curly, fades, beards)
+- [x] Barbershop gallery: 7 client-cut photos (`gallery-01` … `gallery-07`)
+- [x] Unused barbershop assets removed (old cuts / interiors / exteriors / chocolate placeholders)
+- [ ] `barbershop/assets/videos/hero-2.mp4` — upload manually to GitHub (required for hero slide 3)
 - [x] Glamorize gallery expanded with real braiding work + team photo
-- [x] All images converted to WebP, resized & compressed (total ~288 KB across 3 sites)
+- [x] All images converted to WebP, resized & compressed
 - [ ] Final domain confirmation with client
 
 ---
@@ -115,6 +116,39 @@ Also listed: 930 095 886 / 925 184 386 (barbershop secondary)
 ## Changelog / Files Changed
 
 > **Convention:** Every important update lists the exact files changed so you can download only those and push to GitHub.
+
+### 2026-10-05 — Checkout page (Mini-Bar)
+
+New product checkout flow. Cart drawer → dedicated page → WhatsApp with customer details.
+
+**Barbershop**
+- `barbershop/checkout.html` (new)
+- `barbershop/css/style.css`
+- `barbershop/js/main.js`
+- `barbershop/index.html`
+- `barbershop/minibar.html`
+- `barbershop/README.md`
+
+**Root**
+- `README.md`
+
+### 2026-10-05 — Barbershop asset cleanup
+
+Removed unused media not referenced by the live pages. Hero still requires `hero-2.mp4` (upload manually to the barbershop repo).
+
+**Deleted (barbershop)**
+- `assets/images/cuts-beard.webp`, `cuts-braids.webp`, `cuts-curly.webp`, `cuts-kids.webp`, `cuts-styles.webp`
+- `assets/images/exterior-entrance.webp`, `exterior-facade.webp`
+- `assets/images/interior-1.webp`, `interior-2.webp`, `interior-chairs.webp`, `interior-lounge.webp`, `interior-murals.webp`
+- `assets/images/owner-suit.webp`
+- `assets/products/chocolate-closeup.webp`, `chocolate-display.webp`, `chocolate-ginguba.webp`
+
+**Updated**
+- `barbershop/README.md`
+- `README.md`
+
+**Action required**
+- Manually add `barbershop/assets/videos/hero-2.mp4` on GitHub (hero sequence: still → hero.mp4 → hero-2.mp4 → loop)
 
 ### 2026-09-30 — Mini-Bar header matches homepage
 
