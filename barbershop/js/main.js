@@ -20,10 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---------- State ----------
   let cart = JSON.parse(localStorage.getItem('eldocarmo_cart') || '[]');
 
-  // ---------- Hero: still 5s → video 1 full → video 2 full (loop) ----------
+  // ---------- Hero: still 5s → video 1 full (loop) ----------
   const heroStill = document.getElementById('hero-still');
   const heroVideo1 = document.getElementById('hero-video-1');
-  const heroVideo2 = document.getElementById('hero-video-2');
   const heroDots = document.querySelectorAll('.hero__dot');
   let heroTimer = null;
 
@@ -33,12 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const hideAllHeroMedia = () => {
     heroStill?.classList.add('is-hidden');
-    [heroVideo1, heroVideo2].forEach((v) => {
-      if (!v) return;
-      v.classList.remove('is-visible');
-      v.pause();
-      v.currentTime = 0;
-    });
+    if (heroVideo1) {
+      heroVideo1.classList.remove('is-visible');
+      heroVideo1.pause();
+      heroVideo1.currentTime = 0;
+    }
   };
 
   const showHeroSlide = (i) => {
@@ -52,15 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (i === 1 && heroVideo1) {
       heroVideo1.classList.add('is-visible');
       heroVideo1.play().catch(() => {});
-    } else if (i === 2 && heroVideo2) {
-      heroVideo2.classList.add('is-visible');
-      heroVideo2.play().catch(() => {});
     }
   };
 
-  if (heroStill && heroVideo1 && heroVideo2) {
-    heroVideo1.addEventListener('ended', () => showHeroSlide(2));
-    heroVideo2.addEventListener('ended', () => showHeroSlide(0));
+  if (heroStill && heroVideo1) {
+    heroVideo1.addEventListener('ended', () => showHeroSlide(0));
 
     heroDots.forEach((dot) => {
       dot.addEventListener('click', () => {

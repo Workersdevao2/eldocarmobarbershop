@@ -55,11 +55,9 @@ barbershop/
 │   ├── icons/          # music platforms (YouTube, Spotify, Apple, Deezer, YT Music)
 │   ├── images/         # logo, hero still, gallery-01…07, services, lubango, minibar
 │   ├── products/       # Scookiie ×3, Água Pura, Coca-Cola, Cuca
-│   └── videos/         # hero.mp4, hero-2.mp4*, experience clips + posters
+│   └── videos/         # hero.mp4, experience clips + posters
 └── README.md
 ```
-
-> **\*** `hero-2.mp4` is required by the hero sequence (slide 3). Upload it manually to GitHub if it is not in this folder (content-moderation / large-file cases).
 
 ---
 
@@ -86,19 +84,23 @@ Push this folder to its own GitHub repo → Cloudflare Pages
 - Submit opens WhatsApp with full order + customer data pre-filled
 - Files: `checkout.html`, `css/style.css`, `js/main.js`, `index.html`, `minibar.html`
 
+### 2026-10-05 — Remove hero-2
+- Removed second hero video (`hero-video-2` / `hero-2.mp4`) and its dot
+- Hero sequence is now: still 5s → video 1 full → loop
+- Files: `index.html`, `js/main.js`
+
 ### 2026-10-05 — Asset cleanup
 - Removed unused images not referenced in HTML/CSS/JS:
   - cuts-*.webp (5), exterior-*.webp (2), interior-*.webp (5), owner-suit.webp
   - chocolate-closeup / chocolate-display / chocolate-ginguba.webp
 - Gallery remains `gallery-01` … `gallery-07` only
 - Products remain Scookiie ×3 + Água + Coca-Cola + Cuca
-- **Note:** `assets/videos/hero-2.mp4` must be uploaded manually to the repo (not present in this working copy)
 
 ### 2026-09-29 — Hero media
 - Added `hero.webp` (Johnny + mural) as opening still
-- Added `hero.mp4` and `hero-2.mp4` (muted, portrait)
-- Sequence: still 5s → video 1 full → video 2 full → loop
-- Hero dots (3) for slide count / navigation
+- Added `hero.mp4` (muted, portrait)
+- Sequence: still 5s → video 1 full → loop
+- Hero dots (2) for slide count / navigation
 - Dark gradient overlay for text legibility
 
 ### 2026-09-29 — Mini-Bar page
