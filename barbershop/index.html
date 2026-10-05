@@ -7,6 +7,9 @@
   <title>Eldo Carmo Barber Shop | Luanda</title>
   
   <link rel="preload" href="assets/images/hero.webp" as="image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="assets/images/eldocarmologo.webp" type="image/webp">
 </head>
@@ -31,6 +34,7 @@
       </a>
 
       <div class="header__actions">
+        <a href="#agendar" class="btn btn--header-cta header__cta">Agendar</a>
         <button class="cart-btn" id="cart-btn" aria-label="Carrinho" type="button">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
@@ -46,7 +50,6 @@
       <a href="index.html" class="header__nav-link">Início</a>
       <a href="#servicos" class="header__nav-link">Serviços</a>
       <a href="minibar.html" class="header__nav-link">Mini-Bar</a>
-      <a href="#agendar" class="header__nav-link">Agendar</a>
       <div class="header__nav-item header__nav-item--discover">
         <button type="button" class="header__nav-link header__nav-discover-trigger" aria-expanded="false" aria-haspopup="true">
           Discovery
@@ -109,7 +112,6 @@
         <a href="index.html" class="menu-drawer__link">Início</a>
         <a href="#servicos" class="menu-drawer__link">Serviços</a>
         <a href="minibar.html" class="menu-drawer__link">Mini-Bar</a>
-        <a href="#agendar" class="menu-drawer__link">Agendar</a>
         <a href="https://eldocarmo.workersdevao.workers.dev" class="menu-drawer__link" target="_blank" rel="noopener">Portal</a>
       </nav>
 
@@ -149,6 +151,10 @@
           </li>
         </ul>
       </div>
+
+      <div class="menu-drawer__cta">
+        <a href="#agendar" class="btn btn--primary btn--full menu-drawer__agendar">Agendar sessão</a>
+      </div>
     </aside>
   </div>
 
@@ -162,6 +168,7 @@
       <div class="hero__overlay"></div>
     </div>
     <div class="hero__content container">
+      <p class="hero__eyebrow">Luanda · V17 Kilamba</p>
       <h1 class="hero__title">A arte de<br>ser impecável</h1>
       <p class="hero__subtitle">Cortes premium, ambiente exclusivo e a experiência Eldo Carmo.</p>
       <div class="hero__ctas">
@@ -172,6 +179,20 @@
     <div class="hero__dots" role="tablist" aria-label="Conteúdo do hero">
       <button type="button" class="hero__dot is-active" data-hero-go="0" aria-label="Foto 1"></button>
       <button type="button" class="hero__dot" data-hero-go="1" aria-label="Vídeo 1"></button>
+    </div>
+    <a href="#servicos" class="hero__scroll" aria-label="Descer para serviços">
+      <span class="hero__scroll-label">Descubra</span>
+      <span class="hero__scroll-line" aria-hidden="true"></span>
+    </a>
+  </section>
+
+  <!-- ========== MANIFESTO ========== -->
+  <section class="section section--manifesto" id="manifesto">
+    <div class="container">
+      <blockquote class="manifesto">
+        <p class="manifesto__quote">Cada corte é uma declaração. Cada detalhe, uma assinatura.</p>
+        <footer class="manifesto__attr">— Eldo Carmo</footer>
+      </blockquote>
     </div>
   </section>
 
@@ -367,6 +388,7 @@
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
       </button>
     </div>
+    <div class="experience-dots" id="experience-dots" role="tablist" aria-label="Vídeos da experiência"></div>
   </section>
 
   <!-- ========== PRODUCTS / MINI-BAR ========== -->
@@ -382,9 +404,13 @@
       <a href="minibar.html" class="minibar-card">
         <img class="minibar-card__img" src="assets/images/minibar-card.webp" alt="Chocolate Scookiie Ginguba — Eldo Carmo Mini-Bar" loading="lazy">
         <div class="minibar-card__overlay">
-          <span class="minibar-card__btn">Compre agora</span>
+          <span class="minibar-card__eyebrow">Scookiie · Ginguba</span>
+          <span class="minibar-card__btn">Ver Mini-Bar</span>
         </div>
       </a>
+      <div class="section__cta-wrap">
+        <a href="minibar.html" class="btn btn--ghost">Ver todos os produtos</a>
+      </div>
     </div>
   </section>
 
@@ -463,13 +489,38 @@
     </div>
   </section>
 
+  <!-- ========== TRUST ========== -->
+  <section class="section section--trust" aria-label="Confiança">
+    <div class="container">
+      <div class="trust-strip">
+        <div class="trust-item">
+          <span class="trust-item__value">V17</span>
+          <span class="trust-item__label">Kilamba · Luanda</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-item__value">07–22h</span>
+          <span class="trust-item__label">Segunda a Domingo</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-item__value">Premium</span>
+          <span class="trust-item__label">Cortes &amp; experiência</span>
+        </div>
+        <a class="trust-item trust-item--link" href="https://www.instagram.com/eldo_carmo/" target="_blank" rel="noopener">
+          <span class="trust-item__value">@eldo_carmo</span>
+          <span class="trust-item__label">Instagram</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== AGENDAR ========== -->
-  <section class="section" id="agendar">
+  <section class="section section--alt" id="agendar">
     <div class="container">
       <header class="section__header">
         <p class="section__eyebrow">Reserve o seu lugar</p>
         <h2 class="section__title">Agendar Sessão</h2>
         <div class="section__line"></div>
+        <p class="section__intro">Centralidade do Kilamba, V17 · WhatsApp +244 923 929 074</p>
       </header>
 
       <div class="contact-grid">
@@ -568,7 +619,11 @@
         </button>
       </header>
       <div class="cart-drawer__body" id="cart-items">
-        <p class="cart-empty">O carrinho está vazio.</p>
+        <div class="cart-empty">
+          <p class="cart-empty__title">O carrinho está vazio</p>
+          <p class="cart-empty__text">Explore o Mini-Bar e adicione snacks ou bebidas.</p>
+          <a href="minibar.html" class="btn btn--ghost btn--small">Ver Mini-Bar</a>
+        </div>
       </div>
       <footer class="cart-drawer__footer">
         <div class="cart-total">

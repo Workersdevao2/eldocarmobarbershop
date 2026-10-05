@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Checkout — Eldo Carmo Mini-Bar. Confirme o seu pedido e envie via WhatsApp.">
   <title>Checkout | Eldo Carmo Mini-Bar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="assets/images/eldocarmologo.webp" type="image/webp">
 </head>
@@ -27,6 +30,7 @@
       </a>
 
       <div class="header__actions">
+        <a href="index.html#agendar" class="btn btn--header-cta header__cta">Agendar</a>
         <button class="cart-btn" id="cart-btn" aria-label="Carrinho" type="button">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
@@ -43,7 +47,6 @@
       <a href="index.html#servicos" class="header__nav-link">Serviços</a>
       <a href="minibar.html" class="header__nav-link">Mini-Bar</a>
       <a href="index.html#lubango" class="header__nav-link">Lubango</a>
-      <a href="index.html#agendar" class="header__nav-link">Agendar</a>
       <div class="header__nav-item header__nav-item--discover">
         <button type="button" class="header__nav-link header__nav-discover-trigger" aria-expanded="false" aria-haspopup="true">
           Discovery
@@ -106,7 +109,6 @@
         <a href="index.html#servicos" class="menu-drawer__link">Serviços</a>
         <a href="minibar.html" class="menu-drawer__link">Mini-Bar</a>
         <a href="index.html#lubango" class="menu-drawer__link">Lubango</a>
-        <a href="index.html#agendar" class="menu-drawer__link">Agendar</a>
         <a href="https://eldocarmo.workersdevao.workers.dev" class="menu-drawer__link" target="_blank" rel="noopener">Portal</a>
       </nav>
 
@@ -145,6 +147,10 @@
             </a>
           </li>
         </ul>
+      </div>
+
+      <div class="menu-drawer__cta">
+        <a href="index.html#agendar" class="btn btn--primary btn--full menu-drawer__agendar">Agendar sessão</a>
       </div>
     </aside>
   </div>
@@ -248,7 +254,11 @@
         </button>
       </header>
       <div class="cart-drawer__body" id="cart-items">
-        <p class="cart-empty">O carrinho está vazio.</p>
+        <div class="cart-empty">
+          <p class="cart-empty__title">O carrinho está vazio</p>
+          <p class="cart-empty__text">Explore o Mini-Bar e adicione snacks ou bebidas.</p>
+          <a href="minibar.html" class="btn btn--ghost btn--small">Ver Mini-Bar</a>
+        </div>
       </div>
       <footer class="cart-drawer__footer">
         <div class="cart-total">

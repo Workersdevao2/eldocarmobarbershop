@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroVideo1 = document.getElementById('hero-video-1');
   const heroDots = document.querySelectorAll('.hero__dot');
   let heroTimer = null;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const setHeroDot = (i) => {
     heroDots.forEach((d, idx) => d.classList.toggle('is-active', idx === i));
@@ -46,7 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (i === 0) {
       heroStill?.classList.remove('is-hidden');
-      heroTimer = setTimeout(() => showHeroSlide(1), 5000);
+      if (!prefersReducedMotion) {
+        heroTimer = setTimeout(() => showHeroSlide(1), 5000);
+      }
     } else if (i === 1 && heroVideo1) {
       heroVideo1.classList.add('is-visible');
       heroVideo1.play().catch(() => {});
@@ -65,7 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     heroStill.classList.remove('is-hidden');
     setHeroDot(0);
-    heroTimer = setTimeout(() => showHeroSlide(1), 5000);
+    if (!prefersReducedMotion) {
+      heroTimer = setTimeout(() => showHeroSlide(1), 5000);
+    }
   }
 
   // ---------- Left menu drawer ----------
@@ -235,7 +240,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cartClearBtn) cartClearBtn.disabled = empty;
 
     if (empty) {
-      cartItemsEl.innerHTML = '<p class="cart-empty">O carrinho está vazio.</p>';
+      cartItemsEl.innerHTML = `
+        <div class="cart-empty">
+          <p class="cart-empty__title">O carrinho está vazio</p>
+          <p class="cart-empty__text">Explore o Mini-Bar e adicione snacks ou bebidas.</p>
+          <a href="minibar.html" class="btn btn--ghost btn--small">Ver Mini-Bar</a>
+        </div>`;
       return;
     }
 
@@ -501,24 +511,64 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Experience carousel arrows
+  // Experience carousel arrows + dots
   const expTrack = document.getElementById('experience-track');
   const expPrev = document.getElementById('experience-prev');
   const expNext = document.getElementById('experience-next');
+  const expDotsEl = document.getElementById('experience-dots');
 
   if (expTrack && expPrev && expNext) {
+    const cards = () => [...expTrack.querySelectorAll('.experience-card')];
+
     const scrollByCard = (dir) => {
       const card = expTrack.querySelector('.experience-card');
       if (!card) return;
-      const step = card.offsetWidth + 16; // card + gap
+      const step = card.offsetWidth + 16;
       expTrack.scrollBy({ left: dir * step, behavior: 'smooth' });
+    };
+
+    const getActiveIndex = () => {
+      const list = cards();
+      if (!list.length) return 0;
+      const left = expTrack.scrollLeft;
+      let best = 0;
+      let bestDist = Infinity;
+      list.forEach((card, i) => {
+        const dist = Math.abs(card.offsetLeft - left);
+        if (dist < bestDist) {
+          bestDist = dist;
+          best = i;
+        }
+      });
+      return best;
     };
 
     const updateNav = () => {
       const maxScroll = expTrack.scrollWidth - expTrack.clientWidth - 2;
       expPrev.disabled = expTrack.scrollLeft <= 2;
       expNext.disabled = expTrack.scrollLeft >= maxScroll;
+      if (expDotsEl) {
+        const active = getActiveIndex();
+        expDotsEl.querySelectorAll('.experience-dot').forEach((d, i) => {
+          d.classList.toggle('is-active', i === active);
+        });
+      }
     };
+
+    if (expDotsEl) {
+      cards().forEach((_, i) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'experience-dot' + (i === 0 ? ' is-active' : '');
+        btn.setAttribute('aria-label', 'Vídeo ' + (i + 1));
+        btn.addEventListener('click', () => {
+          const list = cards();
+          if (!list[i]) return;
+          expTrack.scrollTo({ left: list[i].offsetLeft, behavior: 'smooth' });
+        });
+        expDotsEl.appendChild(btn);
+      });
+    }
 
     expPrev.addEventListener('click', () => scrollByCard(-1));
     expNext.addEventListener('click', () => scrollByCard(1));
@@ -526,6 +576,16 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', updateNav);
     updateNav();
   }
+
+  // Close menu drawer when tapping Agendar CTA
+  document.querySelectorAll('.menu-drawer__agendar, .menu-drawer__link[href^="#"]').forEach((link) => {
+    link.addEventListener('click', () => {
+      const drawer = document.getElementById('menu-drawer');
+      if (drawer && drawer.classList.contains('is-open')) {
+        document.getElementById('menu-close')?.click();
+      }
+    });
+  });
 
   // ---------- Header scroll: transparent → solid; announce bar only at top ----------
   const header = document.getElementById('header');

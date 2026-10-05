@@ -84,6 +84,17 @@ Push this folder to its own GitHub repo → Cloudflare Pages
 - Submit opens WhatsApp with full order + customer data pre-filled
 - Files: `checkout.html`, `css/style.css`, `js/main.js`, `index.html`, `minibar.html`
 
+### 2026-10-05 — Design refresh
+- Typography: Cormorant Garamond (display) + Inter (body) via Google Fonts
+- Header: compact on scroll + Agendar CTA; mobile drawer sticky Agendar
+- Hero: eyebrow, stronger overlay, scroll indicator; sequence still → video 1
+- Manifesto quote section + trust strip before booking
+- Services: display titles, gold price pills, stronger hover lift
+- Experience: larger play control + progress dots
+- Product cards & cart empty state improved
+- Section spacing / hierarchy tightened; prefers-reduced-motion respected
+- Files: `index.html`, `minibar.html`, `checkout.html`, `css/style.css`, `js/main.js`
+
 ### 2026-10-05 — Remove hero-2
 - Removed second hero video (`hero-video-2` / `hero-2.mp4`) and its dot
 - Hero sequence is now: still 5s → video 1 full → loop
